@@ -1,0 +1,2606 @@
+<!DOCTYPE html>
+<html lang="th" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LUMINA DERMA LAB | เวชสำอาง & สกินแคร์สูตรอ่อนโยน เพื่อผิวสุขภาพดี</title>
+  
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>✨</text></svg>">
+
+  <!-- Google Fonts: Prompt & Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Prompt:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Lucide Icons CDN -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Prompt', 'Plus Jakarta Sans', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              50: '#F4F8F5',
+              100: '#E6EFEA',
+              200: '#C8DDD2',
+              300: '#9EBFB0',
+              400: '#6FA08C',
+              500: '#3D7D65',
+              600: '#2A5C4A',
+              700: '#204639',
+              800: '#17332A',
+              900: '#0F211B',
+            },
+            warm: {
+              50: '#FAF8F5',
+              100: '#F4EFEB',
+              200: '#E9DDD4',
+              500: '#C28E75',
+              600: '#A97057',
+            },
+            glow: '#E07A5F',
+            softbg: '#FCFCFB'
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* Custom styling for luxury clean derm-aesthetic */
+    body {
+      background-color: #FAF9F6;
+      color: #1E2421;
+    }
+    
+    .glass-nav {
+      background: rgba(255, 255, 255, 0.88);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+    }
+
+    .badge-blur {
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(6px);
+    }
+
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar {
+      width: 7px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #F1F1EF;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #C4CFC9;
+      border-radius: 999px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #9BB3A7;
+    }
+
+    .shimmer {
+      background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.4) 50%, rgba(255,255,255,0) 100%);
+      background-size: 200% 100%;
+      animation: shimmer 2.5s infinite;
+    }
+    @keyframes shimmer {
+      0% { background-position: -200% 0; }
+      100% { background-position: 200% 0; }
+    }
+  </style>
+</head>
+<body class="font-sans antialiased text-gray-800 selection:bg-brand-100 selection:text-brand-900 flex flex-col min-h-screen">
+
+  <!-- ================= TOP PROMO BAR ================= -->
+  <div class="bg-brand-900 text-brand-100 text-xs py-2 px-4 transition-all">
+    <div class="max-w-7xl mx-auto flex items-center justify-between">
+      <div class="flex items-center space-x-2">
+        <span class="inline-block w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+        <span class="font-medium">✨ โปรโมชั่นพิเศษ:</span>
+        <span class="hidden sm:inline text-brand-200">ลด 15% ทุกชิ้นสำหรับสมาชิกใหม่ ใส่โค้ด</span>
+        <button onclick="copyPromoCode('LUMINA15')" class="bg-brand-800 hover:bg-brand-700 text-white font-mono px-2 py-0.5 rounded border border-brand-700 font-bold tracking-wider inline-flex items-center gap-1">
+          <span>LUMINA15</span>
+          <i data-lucide="copy" class="w-3 h-3"></i>
+        </button>
+      </div>
+      <div class="flex items-center space-x-4 text-[11px] text-brand-200">
+        <span class="hidden md:inline">🚚 ส่งฟรีทั่วประเทศเมื่อครบ 599.-</span>
+        <button onclick="openModal('trackingModal')" class="hover:text-white underline flex items-center gap-1">
+          <i data-lucide="truck" class="w-3.5 h-3.5"></i>
+          <span>เช็คสถานะพัสดุ</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= MAIN HEADER / NAVBAR ================= -->
+  <header class="glass-nav border-b border-gray-200 sticky top-0 z-40 transition-shadow duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-4">
+      
+      <!-- Brand Logo -->
+      <a href="#" class="flex items-center space-x-3 group">
+        <div class="w-10 h-10 rounded-2xl bg-gradient-to-tr from-brand-600 to-brand-400 text-white flex items-center justify-center shadow-md shadow-brand-500/20 group-hover:scale-105 transition-transform">
+          <i data-lucide="sparkles" class="w-5 h-5 text-emerald-100"></i>
+        </div>
+        <div>
+          <span class="text-xl font-bold tracking-tight text-brand-900 block font-['Plus_Jakarta_Sans']">LUMINA</span>
+          <span class="text-[10px] tracking-widest uppercase text-brand-500 font-semibold -mt-1 block">DERMA LAB</span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation Menu -->
+      <nav class="hidden lg:flex items-center space-x-1 text-sm font-medium text-gray-700">
+        <a href="#hero" class="px-3 py-2 rounded-lg hover:text-brand-600 hover:bg-brand-50 transition">หน้าแรก</a>
+        <a href="#shop" class="px-3 py-2 rounded-lg hover:text-brand-600 hover:bg-brand-50 transition">ผลิตภัณฑ์ทั้งหมด</a>
+        <a href="#skin-quiz" class="px-3 py-2 rounded-lg hover:text-brand-600 hover:bg-brand-50 transition flex items-center gap-1.5 text-brand-700 font-semibold bg-brand-50/70 border border-brand-200/50">
+          <i data-lucide="wand-2" class="w-4 h-4 text-brand-500"></i>
+          <span>วิเคราะห์ผิว (Quiz)</span>
+        </a>
+        <a href="#routine-guide" class="px-3 py-2 rounded-lg hover:text-brand-600 hover:bg-brand-50 transition">ขั้นตอนลงสกินแคร์</a>
+        <a href="#ingredients" class="px-3 py-2 rounded-lg hover:text-brand-600 hover:bg-brand-50 transition">สารสกัดสำคัญ</a>
+        <a href="#reviews" class="px-3 py-2 rounded-lg hover:text-brand-600 hover:bg-brand-50 transition">รีวิวผู้ใช้จริง</a>
+      </nav>
+
+      <!-- Right Action Icons (Search, Wishlist, Cart) -->
+      <div class="flex items-center space-x-2 sm:space-x-3">
+        <!-- Search Trigger / Quick Search Bar -->
+        <div class="relative hidden sm:block w-48 md:w-60">
+          <input 
+            type="text" 
+            id="searchInput" 
+            oninput="handleSearch(this.value)" 
+            placeholder="ค้นหาชื่อสินค้า, สารสกัด..." 
+            class="w-full text-xs pl-8 pr-3 py-2 rounded-full border border-gray-200 bg-white/90 focus:outline-none focus:border-brand-500 focus:ring-1 focus:ring-brand-500 transition shadow-sm"
+          >
+          <i data-lucide="search" class="w-3.5 h-3.5 text-gray-400 absolute left-2.5 top-2.5"></i>
+          <button id="clearSearchBtn" onclick="clearSearch()" class="hidden text-gray-400 hover:text-gray-600 absolute right-2.5 top-2 text-xs">✕</button>
+        </div>
+
+        <!-- Wishlist Button -->
+        <button onclick="toggleWishlistDrawer()" class="relative p-2.5 rounded-full text-gray-600 hover:text-brand-600 hover:bg-brand-50 transition" title="สินค้าที่ถูกใจ">
+          <i data-lucide="heart" class="w-5 h-5"></i>
+          <span id="wishlistCount" class="absolute -top-0.5 -right-0.5 w-4 h-4 bg-rose-500 text-white rounded-full text-[10px] font-bold flex items-center justify-center hidden">0</span>
+        </button>
+
+        <!-- Cart Button -->
+        <button onclick="toggleCartDrawer()" class="relative flex items-center gap-2 px-3 py-2 rounded-full bg-brand-600 hover:bg-brand-700 text-white shadow-md shadow-brand-600/20 transition group">
+          <i data-lucide="shopping-bag" class="w-4 h-4 group-hover:scale-110 transition-transform"></i>
+          <span class="text-xs font-semibold hidden md:inline">ตะกร้า</span>
+          <span id="cartCountBadge" class="bg-white text-brand-700 rounded-full text-[11px] font-bold px-2 py-0.2 min-w-[18px] text-center">0</span>
+        </button>
+
+        <!-- Mobile Menu Trigger -->
+        <button onclick="toggleMobileMenu()" class="lg:hidden p-2 rounded-lg text-gray-600 hover:bg-gray-100">
+          <i data-lucide="menu" class="w-6 h-6"></i>
+        </button>
+      </div>
+
+    </div>
+
+    <!-- Mobile Slide-down Navigation -->
+    <div id="mobileMenu" class="hidden lg:hidden border-t border-gray-200 bg-white px-4 pt-3 pb-6 space-y-2">
+      <div class="mb-3">
+        <input 
+          type="text" 
+          oninput="handleSearch(this.value)" 
+          placeholder="ค้นหาชื่อสินค้า, สารสกัด เช่น Niacinamide..." 
+          class="w-full text-sm pl-9 pr-3 py-2.5 rounded-xl border border-gray-200 bg-gray-50 focus:outline-none focus:border-brand-500"
+        >
+      </div>
+      <a href="#hero" onclick="toggleMobileMenu()" class="block px-3 py-2 rounded-lg text-sm font-medium text-gray-700 hover:bg-brand-50">หน้าแรก</a>
+      <a href="#shop" onclick="toggleMobileMenu()" class="block px-3 py-2 rounded-lg text-sm font-medium text-gray-700 hover:bg-brand-50">ผลิตภัณฑ์ทั้งหมด</a>
+      <a href="#skin-quiz" onclick="toggleMobileMenu()" class="block px-3 py-2 rounded-lg text-sm font-semibold text-brand-700 bg-brand-50">✨ วิเคราะห์สภาพผิว (Skin Quiz)</a>
+      <a href="#routine-guide" onclick="toggleMobileMenu()" class="block px-3 py-2 rounded-lg text-sm font-medium text-gray-700 hover:bg-brand-50">ขั้นตอนลงสกินแคร์</a>
+      <a href="#ingredients" onclick="toggleMobileMenu()" class="block px-3 py-2 rounded-lg text-sm font-medium text-gray-700 hover:bg-brand-50">สารสกัดสำคัญ</a>
+      <a href="#reviews" onclick="toggleMobileMenu()" class="block px-3 py-2 rounded-lg text-sm font-medium text-gray-700 hover:bg-brand-50">รีวิวจากผู้ใช้จริง</a>
+      <button onclick="toggleMobileMenu(); openModal('trackingModal')" class="w-full text-left px-3 py-2 rounded-lg text-sm font-medium text-gray-700 hover:bg-gray-100 flex items-center gap-2">
+        <i data-lucide="truck" class="w-4 h-4"></i> ตรวจสอบสถานะคำสั่งซื้อ
+      </button>
+    </div>
+  </header>
+
+  <!-- ================= HERO SECTION ================= -->
+  <section id="hero" class="relative overflow-hidden pt-8 pb-16 lg:py-20 bg-gradient-to-b from-brand-50/60 via-warm-50/40 to-transparent">
+    <!-- Decorative Ambient Glows -->
+    <div class="absolute -top-24 -left-24 w-96 h-96 bg-brand-200/40 rounded-full blur-3xl pointer-events-none"></div>
+    <div class="absolute top-1/2 -right-24 w-80 h-80 bg-warm-200/40 rounded-full blur-3xl pointer-events-none"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        
+        <!-- Left Hero Content -->
+        <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+          
+          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white border border-brand-200 shadow-sm text-xs text-brand-800 font-medium">
+            <span class="w-2 h-2 rounded-full bg-brand-500"></span>
+            <span>Clean, Vegan & Dermatologically Tested 100%</span>
+          </div>
+
+          <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-gray-900 leading-tight">
+            ฟื้นบำรุงผิวให้แข็งแรง<br>
+            <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-600 via-brand-500 to-warm-500">
+              โกลว์ใส สุขภาพดีจากชั้นใน
+            </span>
+          </h1>
+
+          <p class="text-base sm:text-lg text-gray-600 max-w-xl mx-auto lg:mx-0 font-light leading-relaxed">
+            เวชสำอางสูตรคลีนที่พัฒนาโดยแพทย์ผิวหนัง อ่อนโยน ปราศจากสารระคายเคือง 8 ชนิด ผสานสารสกัดชีวภาพระดับเข้มข้น เพื่อผลลัพธ์ที่พิสูจน์ได้จริงใน 14 วัน
+          </p>
+
+          <!-- CTA Buttons -->
+          <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3.5 pt-2">
+            <a href="#shop" class="w-full sm:w-auto px-7 py-3.5 rounded-xl bg-brand-600 hover:bg-brand-700 text-white font-medium shadow-lg shadow-brand-600/25 transition flex items-center justify-center gap-2 text-sm">
+              <i data-lucide="sparkles" class="w-4 h-4"></i>
+              <span>เลือกชมสินค้าทั้งหมด</span>
+            </a>
+            
+            <a href="#skin-quiz" class="w-full sm:w-auto px-7 py-3.5 rounded-xl bg-white hover:bg-brand-50 border border-brand-200 text-brand-800 font-medium shadow-sm transition flex items-center justify-center gap-2 text-sm">
+              <i data-lucide="help-circle" class="w-4 h-4 text-brand-600"></i>
+              <span>ทำแบบวิเคราะห์ผิวเฉพาะบุคคล</span>
+            </a>
+          </div>
+
+          <!-- Feature Badges -->
+          <div class="grid grid-cols-3 gap-3 pt-6 border-t border-gray-200/80 max-w-lg mx-auto lg:mx-0 text-left">
+            <div class="flex items-center gap-2.5">
+              <div class="w-8 h-8 rounded-lg bg-white shadow-sm flex items-center justify-center text-brand-600 border border-gray-100 shrink-0">
+                <i data-lucide="shield-check" class="w-4 h-4"></i>
+              </div>
+              <div>
+                <p class="text-xs font-semibold text-gray-900">0% Irritants</p>
+                <p class="text-[11px] text-gray-500">ไร้แอลกอฮอล์/น้ำหอม</p>
+              </div>
+            </div>
+
+            <div class="flex items-center gap-2.5">
+              <div class="w-8 h-8 rounded-lg bg-white shadow-sm flex items-center justify-center text-brand-600 border border-gray-100 shrink-0">
+                <i data-lucide="flask-conical" class="w-4 h-4"></i>
+              </div>
+              <div>
+                <p class="text-xs font-semibold text-gray-900">Derma Tested</p>
+                <p class="text-[11px] text-gray-500">ทดสอบโดยแพทย์ผิวหนัง</p>
+              </div>
+            </div>
+
+            <div class="flex items-center gap-2.5">
+              <div class="w-8 h-8 rounded-lg bg-white shadow-sm flex items-center justify-center text-brand-600 border border-gray-100 shrink-0">
+                <i data-lucide="leaf" class="w-4 h-4"></i>
+              </div>
+              <div>
+                <p class="text-xs font-semibold text-gray-900">100% Cruelty Free</p>
+                <p class="text-[11px] text-gray-500">ไม่ทดลองในสัตว์</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Right Hero Visual Showcase -->
+        <div class="lg:col-span-5 relative flex justify-center">
+          <div class="relative w-full max-w-md">
+            
+            <!-- Main Hero Image Frame -->
+            <div class="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white bg-white aspect-[4/5] group">
+              <img 
+                src="https://images.unsplash.com/photo-1620916566398-39f1143ab7be?w=800&auto=format&fit=crop&q=80" 
+                alt="Lumina Radiance Serum" 
+                class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700"
+              >
+              <div class="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent"></div>
+              
+              <div class="absolute bottom-5 left-5 right-5 text-white">
+                <span class="inline-block px-2.5 py-1 rounded-md bg-white/20 backdrop-blur-md text-[11px] font-medium tracking-wide mb-1 uppercase">Hero Product</span>
+                <h3 class="text-lg font-bold">Niacinamide 10% + Zinc Serum</h3>
+                <p class="text-xs text-white/90">ลดรอยสิว คุมมัน กระชับรูขุมขนภายใน 14 วัน</p>
+              </div>
+            </div>
+
+            <!-- Floating Pill 1: Result guarantee -->
+            <div class="absolute -top-4 -left-4 sm:-left-6 bg-white p-3.5 rounded-2xl shadow-xl border border-gray-100 flex items-center gap-3 animate-bounce [animation-duration:4s]">
+              <div class="w-10 h-10 rounded-xl bg-amber-50 text-amber-600 flex items-center justify-center font-bold text-sm">
+                98%
+              </div>
+              <div>
+                <p class="text-xs font-bold text-gray-800">ผู้ใช้จริงพึงพอใจ</p>
+                <p class="text-[10px] text-gray-500">ผิวชุ่มชื้น เรียบเนียนขึ้น</p>
+              </div>
+            </div>
+
+            <!-- Floating Pill 2: Fast delivery -->
+            <div class="absolute -bottom-5 -right-4 sm:-right-6 bg-white p-3.5 rounded-2xl shadow-xl border border-gray-100 flex items-center gap-3">
+              <div class="w-10 h-10 rounded-xl bg-brand-50 text-brand-600 flex items-center justify-center">
+                <i data-lucide="truck" class="w-5 h-5"></i>
+              </div>
+              <div>
+                <p class="text-xs font-bold text-gray-800">ส่งด่วน Same Day</p>
+                <p class="text-[10px] text-gray-500">ถึงมือใน 1-2 วันทำการ</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= TRUST STATS & GUARANTEES ================= -->
+  <section class="border-y border-gray-200 bg-white py-6">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center divide-x-0 md:divide-x divide-gray-100">
+        
+        <div class="flex flex-col items-center p-2">
+          <i data-lucide="check-circle-2" class="w-6 h-6 text-brand-600 mb-2"></i>
+          <h4 class="text-sm font-bold text-gray-900">รับประกันของแท้ 100%</h4>
+          <p class="text-xs text-gray-500">ส่งตรงจากห้องแล็บผู้ผลิต</p>
+        </div>
+
+        <div class="flex flex-col items-center p-2">
+          <i data-lucide="sparkles" class="w-6 h-6 text-brand-600 mb-2"></i>
+          <h4 class="text-sm font-bold text-gray-900">การันตีแพ้ยินดีคืนเงิน</h4>
+          <p class="text-xs text-gray-500">ดูแลคุณภายใน 14 วันหลังรับของ</p>
+        </div>
+
+        <div class="flex flex-col items-center p-2">
+          <i data-lucide="package" class="w-6 h-6 text-brand-600 mb-2"></i>
+          <h4 class="text-sm font-bold text-gray-900">แพ็คเกจซีลสูญญากาศ</h4>
+          <p class="text-xs text-gray-500">คงคุณค่าสารสกัดสดใหม่ที่สุด</p>
+        </div>
+
+        <div class="flex flex-col items-center p-2">
+          <i data-lucide="headphones" class="w-6 h-6 text-brand-600 mb-2"></i>
+          <h4 class="text-sm font-bold text-gray-900">ปรึกษาผู้เชี่ยวชาญฟรี</h4>
+          <p class="text-xs text-gray-500">ทีมผู้เชี่ยวชาญดูแลตลอด 24 ชม.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= PRODUCT CATALOG (SHOP) ================= -->
+  <section id="shop" class="py-16 bg-softbg">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Section Header -->
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-4">
+        <div>
+          <span class="text-xs font-bold uppercase tracking-wider text-brand-600">Our Skincare Collection</span>
+          <h2 class="text-2xl sm:text-3xl font-bold text-gray-900 mt-1">ผลิตภัณฑ์ดูแลผิวทั้งหมด</h2>
+          <p class="text-sm text-gray-500 mt-1">คัดสรรสูตรเวชสำอางที่ออกแบบมาเพื่อสภาพผิวคนเอเชียโดยเฉพาะ</p>
+        </div>
+
+        <!-- Filter info & Results count -->
+        <div class="flex items-center gap-3">
+          <span id="resultsCountText" class="text-xs text-gray-500 bg-white px-3 py-1.5 rounded-full border border-gray-200">
+            กำลังแสดง 10 รายการ
+          </span>
+          <!-- Sort Dropdown -->
+          <div class="relative">
+            <select id="sortSelect" onchange="applyFiltersAndSort()" class="text-xs bg-white border border-gray-200 rounded-lg px-3 py-2 text-gray-700 focus:outline-none focus:border-brand-500 font-medium cursor-pointer shadow-sm">
+              <option value="featured">เรียงตาม: แนะนำยอดนิยม</option>
+              <option value="price-low">ราคา: ต่ำไปสูง</option>
+              <option value="price-high">ราคา: สูงไปต่ำ</option>
+              <option value="rating">คะแนนรีวิวสูงสุด</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <!-- Category Filter Pills -->
+      <div class="flex items-center gap-2 overflow-x-auto pb-3 mb-6 hide-scrollbar text-xs">
+        <button onclick="setCategory('all')" class="cat-pill active px-4 py-2 rounded-full font-medium transition whitespace-nowrap bg-brand-600 text-white shadow-sm" data-category="all">
+          ทั้งหมด (All)
+        </button>
+        <button onclick="setCategory('cleanser')" class="cat-pill px-4 py-2 rounded-full font-medium transition whitespace-nowrap bg-white text-gray-700 hover:bg-gray-100 border border-gray-200" data-category="cleanser">
+          🫧 คลีนเซอร์ & โทนเนอร์
+        </button>
+        <button onclick="setCategory('serum')" class="cat-pill px-4 py-2 rounded-full font-medium transition whitespace-nowrap bg-white text-gray-700 hover:bg-gray-100 border border-gray-200" data-category="serum">
+          💧 เซรั่ม & แอมพูล
+        </button>
+        <button onclick="setCategory('moisturizer')" class="cat-pill px-4 py-2 rounded-full font-medium transition whitespace-nowrap bg-white text-gray-700 hover:bg-gray-100 border border-gray-200" data-category="moisturizer">
+          🧴 มอยส์เจอร์ไรเซอร์
+        </button>
+        <button onclick="setCategory('sunscreen')" class="cat-pill px-4 py-2 rounded-full font-medium transition whitespace-nowrap bg-white text-gray-700 hover:bg-gray-100 border border-gray-200" data-category="sunscreen">
+          ☀️ ครีมกันแดด SPF50+
+        </button>
+        <button onclick="setCategory('treatment')" class="cat-pill px-4 py-2 rounded-full font-medium transition whitespace-nowrap bg-white text-gray-700 hover:bg-gray-100 border border-gray-200" data-category="treatment">
+          ✨ มาสก์ & ผลัดเซลล์ผิว
+        </button>
+        <button onclick="setCategory('bundle')" class="cat-pill px-4 py-2 rounded-full font-medium transition whitespace-nowrap bg-white text-gray-700 hover:bg-gray-100 border border-gray-200" data-category="bundle">
+          🎁 เซตสุดคุ้ม Routine
+        </button>
+      </div>
+
+      <!-- Skin Concern Sub-Filter -->
+      <div class="flex flex-wrap items-center gap-2 mb-8 text-xs bg-white p-3 rounded-xl border border-gray-200/80">
+        <span class="text-gray-500 font-medium flex items-center gap-1">
+          <i data-lucide="filter" class="w-3.5 h-3.5 text-brand-600"></i>
+          เน้นดูแลปัญหา:
+        </span>
+        <button onclick="setConcern('all')" class="concern-pill active text-brand-800 bg-brand-50 px-2.5 py-1 rounded-md font-medium" data-concern="all">ทุกปัญหาผิว</button>
+        <button onclick="setConcern('acne')" class="concern-pill text-gray-600 hover:text-brand-700 px-2.5 py-1 rounded-md" data-concern="acne">สิว & รูขุมขน</button>
+        <button onclick="setConcern('brightening')" class="concern-pill text-gray-600 hover:text-brand-700 px-2.5 py-1 rounded-md" data-concern="brightening">รอยดำ & ผิวหมองคล้ำ</button>
+        <button onclick="setConcern('barrier')" class="concern-pill text-gray-600 hover:text-brand-700 px-2.5 py-1 rounded-md" data-concern="barrier">ผิวแพ้ง่าย & เสริมเกราะป้องกัน</button>
+        <button onclick="setConcern('hydration')" class="concern-pill text-gray-600 hover:text-brand-700 px-2.5 py-1 rounded-md" data-concern="hydration">ผิวแห้งขาดน้ำ</button>
+      </div>
+
+      <!-- Products Grid -->
+      <div id="productsGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+        <!-- Products will be dynamically populated by JavaScript -->
+      </div>
+
+      <!-- Empty State (when search has no match) -->
+      <div id="noProductsFound" class="hidden text-center py-16 bg-white rounded-2xl border border-dashed border-gray-300">
+        <i data-lucide="search-x" class="w-12 h-12 text-gray-300 mx-auto mb-3"></i>
+        <h3 class="text-base font-bold text-gray-800">ไม่พบผลิตภัณฑ์ที่ตรงกับเงื่อนไข</h3>
+        <p class="text-xs text-gray-500 mt-1">ลองเปลี่ยนคำค้นหา หรือเลือกหมวดหมู่อื่นดูนะคะ</p>
+        <button onclick="resetFilters()" class="mt-4 px-4 py-2 bg-brand-600 text-white rounded-lg text-xs font-medium">ล้างตัวกรองทั้งหมด</button>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= SKINCARE ROUTINE QUIZ (INTERACTIVE DIAGNOSTIC) ================= -->
+  <section id="skin-quiz" class="py-16 bg-gradient-to-b from-brand-900 to-brand-800 text-white relative overflow-hidden">
+    <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#fff_1px,transparent_1px)] [background-size:16px_16px]"></div>
+
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 relative z-10">
+      
+      <!-- Quiz Header -->
+      <div class="text-center mb-10">
+        <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-brand-700/80 border border-brand-600 text-xs text-brand-200 font-semibold mb-3">
+          <i data-lucide="sparkles" class="w-3.5 h-3.5 text-amber-300"></i>
+          AI Skincare Diagnostic Tool
+        </span>
+        <h2 class="text-2xl sm:text-3xl font-bold">แบบวิเคราะห์สภาพผิว & ออกแบบเซตบำรุงเฉพาะบุคคล</h2>
+        <p class="text-xs sm:text-sm text-brand-200 mt-2 max-w-xl mx-auto">
+          ตอบคำถามสั้นๆ 3 ข้อ เพื่อค้นหาสกินแคร์รูทีนที่ตรงกับสภาพผิวของคุณที่สุด พร้อมรับส่วนลดพิเศษสำหรับเซตของคุณ
+        </p>
+      </div>
+
+      <!-- Quiz Card Container -->
+      <div class="bg-white text-gray-800 rounded-3xl p-6 sm:p-8 shadow-2xl border border-white/20">
+        
+        <!-- Progress Bar -->
+        <div class="mb-6">
+          <div class="flex justify-between text-xs text-gray-500 font-medium mb-1.5">
+            <span id="quizStepTitle">ขั้นตอนที่ 1 จาก 3: สภาพผิวปัจจุบันของคุณ</span>
+            <span id="quizPercent">33%</span>
+          </div>
+          <div class="w-full bg-gray-100 rounded-full h-2 overflow-hidden">
+            <div id="quizProgressBar" class="bg-brand-500 h-2 rounded-full transition-all duration-300" style="width: 33%"></div>
+          </div>
+        </div>
+
+        <!-- QUIZ STEP 1: Skin Type -->
+        <div id="quizStep1" class="quiz-step">
+          <h3 class="text-base font-bold text-gray-900 mb-2">1. โดยปกติแล้ว ผิวหน้าของคุณมีความรู้สึกอย่างไรในระหว่างวัน?</h3>
+          <p class="text-xs text-gray-500 mb-4">เลือกสภาพผิวที่ตรงกับคุณมากที่สุด</p>
+          
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <button onclick="selectQuizAnswer(1, 'oily', 'ผิวมัน (Oily Skin)')" class="quiz-btn text-left p-4 rounded-xl border border-gray-200 hover:border-brand-500 hover:bg-brand-50/50 transition flex items-center justify-between">
+              <div>
+                <p class="text-sm font-semibold text-gray-800">ผิวมัน (Oily Skin)</p>
+                <p class="text-xs text-gray-500 mt-0.5">หน้ามันเยิ้มทั่วทั้งหน้า รูขุมขนกว้าง เกิดสิวง่าย</p>
+              </div>
+              <i data-lucide="chevron-right" class="w-4 h-4 text-gray-400"></i>
+            </button>
+
+            <button onclick="selectQuizAnswer(1, 'dry', 'ผิวแห้ง (Dry Skin)')" class="quiz-btn text-left p-4 rounded-xl border border-gray-200 hover:border-brand-500 hover:bg-brand-50/50 transition flex items-center justify-between">
+              <div>
+                <p class="text-sm font-semibold text-gray-800">ผิวแห้ง (Dry Skin)</p>
+                <p class="text-xs text-gray-500 mt-0.5">ผิวตึง ลอกเป็นขุย ขาดความชุ่มชื้น แต่งหน้าไม่ติด</p>
+              </div>
+              <i data-lucide="chevron-right" class="w-4 h-4 text-gray-400"></i>
+            </button>
+
+            <button onclick="selectQuizAnswer(1, 'combination', 'ผิวผสม (Combination)')" class="quiz-btn text-left p-4 rounded-xl border border-gray-200 hover:border-brand-500 hover:bg-brand-50/50 transition flex items-center justify-between">
+              <div>
+                <p class="text-sm font-semibold text-gray-800">ผิวผสม (Combination)</p>
+                <p class="text-xs text-gray-500 mt-0.5">มันช่วง T-Zone (หน้าผาก/จมูก) แต่แห้งบริเวณแก้ม</p>
+              </div>
+              <i data-lucide="chevron-right" class="w-4 h-4 text-gray-400"></i>
+            </button>
+
+            <button onclick="selectQuizAnswer(1, 'sensitive', 'ผิวบอบบางแพ้ง่าย (Sensitive)')" class="quiz-btn text-left p-4 rounded-xl border border-gray-200 hover:border-brand-500 hover:bg-brand-50/50 transition flex items-center justify-between">
+              <div>
+                <p class="text-sm font-semibold text-gray-800">ผิวบอบบางแพ้ง่าย (Sensitive)</p>
+                <p class="text-xs text-gray-500 mt-0.5">แสบแดงง่าย คัน ระคายเคืองเมื่อเจอฝุ่นหรือสารเคมี</p>
+              </div>
+              <i data-lucide="chevron-right" class="w-4 h-4 text-gray-400"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- QUIZ STEP 2: Main Concern -->
+        <div id="quizStep2" class="quiz-step hidden">
+          <h3 class="text-base font-bold text-gray-900 mb-2">2. ปัญหาผิวที่คุณต้องการฟื้นบำรุงอย่างเร่งด่วนที่สุดคืออะไร?</h3>
+          <p class="text-xs text-gray-500 mb-4">ระบุเป้าหมายการดูแลผิว</p>
+          
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <button onclick="selectQuizAnswer(2, 'acne', 'สิวอักเสบ สิวอุดตัน & รูขุมขนกว้าง')" class="quiz-btn text-left p-4 rounded-xl border border-gray-200 hover:border-brand-500 hover:bg-brand-50/50 transition flex items-center justify-between">
+              <div>
+                <p class="text-sm font-semibold text-gray-800">สิว & สิวอุดตัน</p>
+                <p class="text-xs text-gray-500 mt-0.5">ต้องการลดการเกิดสิวใหม่ และสลายการอุดตัน</p>
+              </div>
+              <i data-lucide="chevron-right" class="w-4 h-4 text-gray-400"></i>
+            </button>
+
+            <button onclick="selectQuizAnswer(2, 'brightening', 'รอยสิว จุดด่างดำ & ผิวหมองคล้ำ')" class="quiz-btn text-left p-4 rounded-xl border border-gray-200 hover:border-brand-500 hover:bg-brand-50/50 transition flex items-center justify-between">
+              <div>
+                <p class="text-sm font-semibold text-gray-800">รอยสิว & ฝ้ากระ หมองคล้ำ</p>
+                <p class="text-xs text-gray-500 mt-0.5">อยากให้ผิวกระจ่างใส สีผิวสม่ำเสมอ มีออร่า</p>
+              </div>
+              <i data-lucide="chevron-right" class="w-4 h-4 text-gray-400"></i>
+            </button>
+
+            <button onclick="selectQuizAnswer(2, 'barrier', 'ผิวอ่อนแอ เกราะป้องกันผิวพัง')" class="quiz-btn text-left p-4 rounded-xl border border-gray-200 hover:border-brand-500 hover:bg-brand-50/50 transition flex items-center justify-between">
+              <div>
+                <p class="text-sm font-semibold text-gray-800">เกราะป้องกันผิวอ่อนแอ</p>
+                <p class="text-xs text-gray-500 mt-0.5">ผิวบาง แสบ แดงง่าย ต้องการฟื้นฟูโครงสร้างผิว</p>
+              </div>
+              <i data-lucide="chevron-right" class="w-4 h-4 text-gray-400"></i>
+            </button>
+
+            <button onclick="selectQuizAnswer(2, 'aging', 'ริ้วรอย & ผิวขาดน้ำ แห้งกร้าน')" class="quiz-btn text-left p-4 rounded-xl border border-gray-200 hover:border-brand-500 hover:bg-brand-50/50 transition flex items-center justify-between">
+              <div>
+                <p class="text-sm font-semibold text-gray-800">ผิวแห้งกร้าน ขาดน้ำ ริ้วรอยแรกเริ่ม</p>
+                <p class="text-xs text-gray-500 mt-0.5">ต้องการเติมน้ำลึกให้ผิวเด้งอิ่มฟู ชุ่มชื้นยาวนาน</p>
+              </div>
+              <i data-lucide="chevron-right" class="w-4 h-4 text-gray-400"></i>
+            </button>
+          </div>
+          <div class="mt-4 flex justify-between">
+            <button onclick="prevQuizStep(1)" class="text-xs text-gray-500 hover:text-gray-800 flex items-center gap-1">
+              <i data-lucide="chevron-left" class="w-3.5 h-3.5"></i> ย้อนกลับ
+            </button>
+          </div>
+        </div>
+
+        <!-- QUIZ STEP 3: Lifestyle & Environment -->
+        <div id="quizStep3" class="quiz-step hidden">
+          <h3 class="text-base font-bold text-gray-900 mb-2">3. สภาพแวดล้อมและพฤติกรรมในชีวิตประจำวันของคุณ?</h3>
+          <p class="text-xs text-gray-500 mb-4">ปัจจัยภายนอกที่ส่งผลต่อสภาพผิว</p>
+          
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <button onclick="selectQuizAnswer(3, 'office', 'ทำงานในห้องแอร์ / จ้องจอคอมพิวเตอร์นาน')" class="quiz-btn text-left p-4 rounded-xl border border-gray-200 hover:border-brand-500 hover:bg-brand-50/50 transition flex items-center justify-between">
+              <div>
+                <p class="text-sm font-semibold text-gray-800">ทำงานห้องแอร์ทั้งวัน</p>
+                <p class="text-xs text-gray-500 mt-0.5">ผิวสูญเสียน้ำ อากาศแห้ง และเจอบลูไลท์</p>
+              </div>
+              <i data-lucide="chevron-right" class="w-4 h-4 text-gray-400"></i>
+            </button>
+
+            <button onclick="selectQuizAnswer(3, 'outdoor', 'ต้องออกแดด / เจอมลภาวะ ฝุ่นควันบ่อย')" class="quiz-btn text-left p-4 rounded-xl border border-gray-200 hover:border-brand-500 hover:bg-brand-50/50 transition flex items-center justify-between">
+              <div>
+                <p class="text-sm font-semibold text-gray-800">ออกแดด & ฝุ่นควัน PM2.5 บ่อย</p>
+                <p class="text-xs text-gray-500 mt-0.5">เจอรังสียูวีและมลภาวะกระตุ้นการอักเสบ</p>
+              </div>
+              <i data-lucide="chevron-right" class="w-4 h-4 text-gray-400"></i>
+            </button>
+
+            <button onclick="selectQuizAnswer(3, 'makeup', 'แต่งหน้าทุกวัน / ใช้เครื่องสำอางกันน้ำ')" class="quiz-btn text-left p-4 rounded-xl border border-gray-200 hover:border-brand-500 hover:bg-brand-50/50 transition flex items-center justify-between">
+              <div>
+                <p class="text-sm font-semibold text-gray-800">แต่งหน้าทุกวัน</p>
+                <p class="text-xs text-gray-500 mt-0.5">ต้องทำความสะอาดให้หมดจดเพื่อลดการอุดตัน</p>
+              </div>
+              <i data-lucide="chevron-right" class="w-4 h-4 text-gray-400"></i>
+            </button>
+
+            <button onclick="selectQuizAnswer(3, 'nightowl', 'นอนดึก / พักผ่อนไม่เพียงพอ')" class="quiz-btn text-left p-4 rounded-xl border border-gray-200 hover:border-brand-500 hover:bg-brand-50/50 transition flex items-center justify-between">
+              <div>
+                <p class="text-sm font-semibold text-gray-800">นอนดึก เครียด พักผ่อนน้อย</p>
+                <p class="text-xs text-gray-500 mt-0.5">ผิวโทรม ซ่อมแซมตัวเองได้ช้าลง</p>
+              </div>
+              <i data-lucide="chevron-right" class="w-4 h-4 text-gray-400"></i>
+            </button>
+          </div>
+          <div class="mt-4 flex justify-between">
+            <button onclick="prevQuizStep(2)" class="text-xs text-gray-500 hover:text-gray-800 flex items-center gap-1">
+              <i data-lucide="chevron-left" class="w-3.5 h-3.5"></i> ย้อนกลับ
+            </button>
+          </div>
+        </div>
+
+        <!-- QUIZ RESULT -->
+        <div id="quizResult" class="hidden">
+          <div class="bg-gradient-to-br from-brand-50 to-warm-50 p-5 rounded-2xl border border-brand-200 mb-6">
+            <div class="flex items-center gap-3 mb-2">
+              <span class="w-8 h-8 rounded-full bg-brand-600 text-white flex items-center justify-center text-sm font-bold">✓</span>
+              <div>
+                <h4 class="text-base font-bold text-brand-900" id="resultRoutineTitle">ผลการวิเคราะห์: เซตรูทีนกู้ผิวเร่งด่วน</h4>
+                <p class="text-xs text-brand-700" id="resultRoutineSub">เหมาะสำหรับคุณโดยเฉพาะ</p>
+              </div>
+            </div>
+            <p class="text-xs text-gray-600 leading-relaxed mt-2" id="resultRoutineDesc">
+              ผิวของคุณต้องการการเสริมเกราะป้องกันผิว (Skin Barrier) พร้อมควบคุมความมันและลดการระคายเคืองอย่างอ่อนโยน
+            </p>
+          </div>
+
+          <h4 class="text-xs font-bold uppercase tracking-wider text-gray-500 mb-3">เซตแนะนำ 3 ขั้นตอน AM/PM Routine สำหรับคุณ:</h4>
+          
+          <div id="quizRecommendedProducts" class="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-6">
+            <!-- Dynamically populated -->
+          </div>
+
+          <div class="bg-gray-50 p-4 rounded-xl flex flex-col sm:flex-row items-center justify-between gap-3">
+            <div>
+              <p class="text-xs text-gray-500">ราคารวมเซตพิเศษ (ลดทันที 15%):</p>
+              <div class="flex items-baseline gap-2">
+                <span id="quizBundleOldPrice" class="text-xs text-gray-400 line-through">฿1,630</span>
+                <span id="quizBundlePrice" class="text-xl font-bold text-brand-700">฿1,385</span>
+                <span class="text-[10px] bg-rose-100 text-rose-700 font-bold px-1.5 py-0.5 rounded">ประหยัด ฿245</span>
+              </div>
+            </div>
+            <div class="flex gap-2 w-full sm:w-auto">
+              <button onclick="resetQuiz()" class="px-4 py-2.5 rounded-xl border border-gray-300 text-xs text-gray-600 hover:bg-gray-100">
+                ทำแบบทดสอบใหม่
+              </button>
+              <button onclick="addQuizBundleToCart()" class="flex-1 sm:flex-initial px-5 py-2.5 rounded-xl bg-brand-600 hover:bg-brand-700 text-white text-xs font-semibold shadow-md flex items-center justify-center gap-1.5">
+                <i data-lucide="shopping-bag" class="w-4 h-4"></i>
+                <span>เพิ่มทั้งเซตลงตะกร้า</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= SKINCARE ROUTINE GUIDE (AM/PM) ================= -->
+  <section id="routine-guide" class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-2xl mx-auto mb-12">
+        <span class="text-xs font-bold uppercase tracking-wider text-brand-600">Skincare Order Guide</span>
+        <h2 class="text-2xl sm:text-3xl font-bold text-gray-900 mt-1">ลำดับการลงสกินแคร์ที่ถูกต้อง</h2>
+        <p class="text-sm text-gray-500 mt-2">
+          เคล็ดลับการลงผลิตภัณฑ์เรียงจากเนื้อสัมผัสเบาที่สุดไปยังหนักที่สุด เพื่อการดูดซึมที่มีประสิทธิภาพสูงสุด
+        </p>
+
+        <!-- AM / PM Switcher Tabs -->
+        <div class="inline-flex p-1 bg-gray-100 rounded-xl mt-6 border border-gray-200">
+          <button id="routineMorningTab" onclick="switchRoutineMode('morning')" class="px-5 py-2 rounded-lg text-xs font-semibold transition bg-white text-brand-800 shadow-sm flex items-center gap-1.5">
+            <span>☀️ กิจวัตรตอนเช้า (Morning)</span>
+          </button>
+          <button id="routineNightTab" onclick="switchRoutineMode('night')" class="px-5 py-2 rounded-lg text-xs font-semibold transition text-gray-600 hover:text-gray-900 flex items-center gap-1.5">
+            <span>🌙 กิจวัตรก่อนนอน (Night)</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Steps Timeline Cards -->
+      <div id="routineTimeline" class="grid grid-cols-1 md:grid-cols-5 gap-4">
+        <!-- Rendered by JS -->
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= INGREDIENT LIBRARY ================= -->
+  <section id="ingredients" class="py-16 bg-brand-50/50 border-t border-gray-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-4">
+        <div>
+          <span class="text-xs font-bold uppercase tracking-wider text-brand-600">Active Ingredients Encyclopedia</span>
+          <h2 class="text-2xl sm:text-3xl font-bold text-gray-900 mt-1">พจนานุกรมสารสกัดสำคัญระดับเวชสำอาง</h2>
+          <p class="text-sm text-gray-500 mt-1">คลิกที่สารสกัดเพื่อดูคุณประโยชน์และดูสินค้าที่มีสารสกัดนั้น</p>
+        </div>
+      </div>
+
+      <!-- Ingredient Cards Grid -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        
+        <!-- Niacinamide -->
+        <div onclick="filterByIngredient('Niacinamide')" class="bg-white p-5 rounded-2xl border border-gray-200 shadow-sm hover:shadow-md hover:border-brand-400 transition cursor-pointer group">
+          <div class="w-10 h-10 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center font-bold text-sm mb-3 group-hover:scale-110 transition-transform">
+            B3
+          </div>
+          <h3 class="text-sm font-bold text-gray-900">Niacinamide (10%)</h3>
+          <p class="text-xs text-brand-600 font-medium mb-1.5">วิตามินบี 3 บริสุทธิ์</p>
+          <p class="text-xs text-gray-500 leading-relaxed">
+            ช่วยลดเลือนรอยดำ รอยแดงจากสิว กระชับรูขุมขน และช่วยควบคุมความมันส่วนเกินอย่างเห็นได้ชัด
+          </p>
+          <div class="mt-4 flex items-center text-xs font-semibold text-brand-600 group-hover:underline">
+            ดูสินค้าที่มีสารนี้ <i data-lucide="arrow-right" class="w-3.5 h-3.5 ml-1"></i>
+          </div>
+        </div>
+
+        <!-- Hyaluronic Acid -->
+        <div onclick="filterByIngredient('Hyaluronic')" class="bg-white p-5 rounded-2xl border border-gray-200 shadow-sm hover:shadow-md hover:border-brand-400 transition cursor-pointer group">
+          <div class="w-10 h-10 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center font-bold text-sm mb-3 group-hover:scale-110 transition-transform">
+            HA
+          </div>
+          <h3 class="text-sm font-bold text-gray-900">8D Hyaluronic Acid</h3>
+          <p class="text-xs text-brand-600 font-medium mb-1.5">ไฮยาลูรอน 8 โมเลกุล</p>
+          <p class="text-xs text-gray-500 leading-relaxed">
+            กักเก็บน้ำได้ถึง 1,000 เท่า เติมความชุ่มชื้นลึกทุกชั้นผิว ช่วยให้ผิวฉ่ำวาว อิ่มฟู เต่งตึง
+          </p>
+          <div class="mt-4 flex items-center text-xs font-semibold text-brand-600 group-hover:underline">
+            ดูสินค้าที่มีสารนี้ <i data-lucide="arrow-right" class="w-3.5 h-3.5 ml-1"></i>
+          </div>
+        </div>
+
+        <!-- Ceramides -->
+        <div onclick="filterByIngredient('Ceramides')" class="bg-white p-5 rounded-2xl border border-gray-200 shadow-sm hover:shadow-md hover:border-brand-400 transition cursor-pointer group">
+          <div class="w-10 h-10 rounded-xl bg-amber-50 text-amber-600 flex items-center justify-center font-bold text-sm mb-3 group-hover:scale-110 transition-transform">
+            5X
+          </div>
+          <h3 class="text-sm font-bold text-gray-900">Ceramide Complex (5X)</h3>
+          <p class="text-xs text-brand-600 font-medium mb-1.5">เซราไมด์จำเป็น 5 ชนิด</p>
+          <p class="text-xs text-gray-500 leading-relaxed">
+            เลียนแบบไขมันตามธรรมชาติ ซ่อมแซมเกราะป้องกันผิวที่ถูกทำลาย ลดการสูญเสียน้ำและอาการแพ้
+          </p>
+          <div class="mt-4 flex items-center text-xs font-semibold text-brand-600 group-hover:underline">
+            ดูสินค้าที่มีสารนี้ <i data-lucide="arrow-right" class="w-3.5 h-3.5 ml-1"></i>
+          </div>
+        </div>
+
+        <!-- Centella Asiatica -->
+        <div onclick="filterByIngredient('Centella')" class="bg-white p-5 rounded-2xl border border-gray-200 shadow-sm hover:shadow-md hover:border-brand-400 transition cursor-pointer group">
+          <div class="w-10 h-10 rounded-xl bg-green-50 text-green-600 flex items-center justify-center font-bold text-sm mb-3 group-hover:scale-110 transition-transform">
+            🌿
+          </div>
+          <h3 class="text-sm font-bold text-gray-900">Centella Asiatica (Cica)</h3>
+          <p class="text-xs text-brand-600 font-medium mb-1.5">สารสกัดใบบัวบกมาดากัสการ์</p>
+          <p class="text-xs text-gray-500 leading-relaxed">
+            ปลอบประโลมผิวอย่างเร่งด่วน ลดการอักเสบ บวมแดง สมานรอยแผลเป็น และต้านอนุมูลอิสระ
+          </p>
+          <div class="mt-4 flex items-center text-xs font-semibold text-brand-600 group-hover:underline">
+            ดูสินค้าที่มีสารนี้ <i data-lucide="arrow-right" class="w-3.5 h-3.5 ml-1"></i>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= REVIEWS & BEFORE / AFTER ================= -->
+  <section id="reviews" class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between mb-10 gap-4">
+        <div>
+          <span class="text-xs font-bold uppercase tracking-wider text-brand-600">Customer Testimonials</span>
+          <h2 class="text-2xl sm:text-3xl font-bold text-gray-900 mt-1">เสียงตอบรับจากผู้ใช้จริง</h2>
+          <p class="text-sm text-gray-500 mt-1">มากกว่า 98% ของผู้ใช้ยืนยันว่าผิวแลดูมีสุขภาพดีขึ้นใน 2 สัปดาห์</p>
+        </div>
+        <button onclick="openModal('addReviewModal')" class="px-5 py-2.5 rounded-xl border border-brand-500 text-brand-700 hover:bg-brand-50 text-xs font-semibold flex items-center gap-1.5 self-start sm:self-auto">
+          <i data-lucide="edit-3" class="w-4 h-4"></i>
+          <span>เขียนรีวิวของคุณ</span>
+        </button>
+      </div>
+
+      <!-- Reviews Grid -->
+      <div id="reviewsList" class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <!-- Dynamically rendered -->
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="bg-gray-900 text-gray-400 text-xs pt-16 pb-12 border-t border-gray-800 mt-auto">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-10 pb-12 border-b border-gray-800">
+        
+        <!-- Brand Info -->
+        <div class="space-y-4">
+          <div class="flex items-center space-x-2 text-white">
+            <div class="w-8 h-8 rounded-xl bg-brand-500 text-white flex items-center justify-center">
+              <i data-lucide="sparkles" class="w-4 h-4"></i>
+            </div>
+            <span class="text-lg font-bold tracking-tight">LUMINA DERMA LAB</span>
+          </div>
+          <p class="text-gray-400 leading-relaxed text-xs">
+            เวชสำอางที่มุ่งมั่นส่งมอบผลลัพธ์ผิวสวยสุขภาพดี ปลอดภัย ปราศจากสารก่อการระคายเคือง เพื่อความมั่นใจในทุกวันของคุณ
+          </p>
+          <div class="flex space-x-3 pt-2 text-white">
+            <a href="#" class="w-8 h-8 rounded-full bg-gray-800 hover:bg-brand-600 flex items-center justify-center transition"><i data-lucide="instagram" class="w-4 h-4"></i></a>
+            <a href="#" class="w-8 h-8 rounded-full bg-gray-800 hover:bg-brand-600 flex items-center justify-center transition"><i data-lucide="facebook" class="w-4 h-4"></i></a>
+            <a href="#" class="w-8 h-8 rounded-full bg-gray-800 hover:bg-brand-600 flex items-center justify-center transition"><i data-lucide="message-circle" class="w-4 h-4"></i></a>
+          </div>
+        </div>
+
+        <!-- Quick Links -->
+        <div>
+          <h4 class="text-white font-semibold mb-4 text-sm">เมนูแนะนำ</h4>
+          <ul class="space-y-2.5">
+            <li><a href="#shop" class="hover:text-white transition">ผลิตภัณฑ์ทั้งหมด</a></li>
+            <li><a href="#skin-quiz" class="hover:text-white transition">แบบวิเคราะห์สภาพผิว AI</a></li>
+            <li><a href="#routine-guide" class="hover:text-white transition">คู่มือการลงสกินแคร์</a></li>
+            <li><a href="#ingredients" class="hover:text-white transition">พจนานุกรมสารสกัด</a></li>
+            <li><a href="#reviews" class="hover:text-white transition">รีวิวจากลูกค้า</a></li>
+          </ul>
+        </div>
+
+        <!-- Customer Care -->
+        <div>
+          <h4 class="text-white font-semibold mb-4 text-sm">บริการลูกค้า</h4>
+          <ul class="space-y-2.5">
+            <li><button onclick="openModal('trackingModal')" class="hover:text-white transition">ติดตามพัสดุคำสั่งซื้อ</button></li>
+            <li><a href="#" onclick="alert('นโยบายรับประกัน: ยินดีคืนเงินภายใน 14 วันหากเกิดอาการแพ้ระคายเคือง โดยแนบใบรับรองแพทย์'); return false;" class="hover:text-white transition">นโยบายการรับประกันสินค้า</a></li>
+            <li><a href="#" onclick="alert('จัดส่งฟรีเมื่อมียอดสั่งซื้อ 599 บาทขึ้นไป ทั่วประเทศไทย'); return false;" class="hover:text-white transition">เงื่อนไขการจัดส่งฟรี</a></li>
+            <li><a href="#" onclick="alert('ปรึกษาผู้เชี่ยวชาญ Line: @LUMINA_DERMA'); return false;" class="hover:text-white transition">ปรึกษาปัญหาผิว (Live Chat)</a></li>
+          </ul>
+        </div>
+
+        <!-- Newsletter & Contact -->
+        <div>
+          <h4 class="text-white font-semibold mb-4 text-sm">รับสิทธิพิเศษก่อนใคร</h4>
+          <p class="text-gray-400 mb-3 text-xs">สมัครรับข่าวสารและโค้ดส่วนลดลับประจำสัปดาห์</p>
+          <form onsubmit="handleNewsletter(event)" class="space-y-2">
+            <input type="email" id="newsletterEmail" required placeholder="กรอกอีเมลของคุณ..." class="w-full px-3 py-2 bg-gray-800 border border-gray-700 rounded-lg text-white placeholder-gray-500 text-xs focus:outline-none focus:border-brand-500">
+            <button type="submit" class="w-full py-2 bg-brand-600 hover:bg-brand-500 text-white rounded-lg font-medium transition text-xs">
+              สมัครรับสิทธิ์
+            </button>
+          </form>
+        </div>
+
+      </div>
+
+      <div class="pt-8 flex flex-col sm:flex-row items-center justify-between text-gray-500 text-[11px] gap-4">
+        <p>© 2026 LUMINA DERMA LAB. All rights reserved. คิดค้นและพัฒนาสูตรเพื่อผิวคนไทย</p>
+        <div class="flex space-x-4">
+          <span>ความปลอดภัยมาตรฐาน GMP / ISO 22716</span>
+          <span>เลขจดแจ้ง อย. ทุกรายการ</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ================= MOBILE STICKY BOTTOM BAR ================= -->
+  <div class="lg:hidden fixed bottom-0 left-0 right-0 bg-white/95 backdrop-blur-md border-t border-gray-200 py-2 px-4 z-30 flex items-center justify-around shadow-lg">
+    <a href="#hero" class="flex flex-col items-center text-gray-600 hover:text-brand-600 text-[10px]">
+      <i data-lucide="home" class="w-5 h-5"></i>
+      <span>หน้าแรก</span>
+    </a>
+    <a href="#shop" class="flex flex-col items-center text-gray-600 hover:text-brand-600 text-[10px]">
+      <i data-lucide="grid" class="w-5 h-5"></i>
+      <span>สินค้า</span>
+    </a>
+    <a href="#skin-quiz" class="flex flex-col items-center text-brand-600 font-semibold text-[10px]">
+      <div class="w-7 h-7 rounded-full bg-brand-50 flex items-center justify-center -mt-2 shadow-sm border border-brand-200">
+        <i data-lucide="sparkles" class="w-4 h-4 text-brand-600"></i>
+      </div>
+      <span>วิเคราะห์ผิว</span>
+    </a>
+    <button onclick="toggleWishlistDrawer()" class="flex flex-col items-center text-gray-600 hover:text-brand-600 text-[10px] relative">
+      <i data-lucide="heart" class="w-5 h-5"></i>
+      <span>ถูกใจ</span>
+      <span id="mobileWishlistCount" class="absolute -top-1 right-2 w-3.5 h-3.5 bg-rose-500 text-white rounded-full text-[9px] flex items-center justify-center hidden">0</span>
+    </button>
+    <button onclick="toggleCartDrawer()" class="flex flex-col items-center text-gray-600 hover:text-brand-600 text-[10px] relative">
+      <i data-lucide="shopping-bag" class="w-5 h-5"></i>
+      <span>ตะกร้า</span>
+      <span id="mobileCartCount" class="absolute -top-1 right-2 w-3.5 h-3.5 bg-brand-600 text-white rounded-full text-[9px] font-bold flex items-center justify-center">0</span>
+    </button>
+  </div>
+
+  <!-- ================= SLIDE-OVER CART DRAWER ================= -->
+  <div id="cartDrawerBackdrop" onclick="toggleCartDrawer()" class="fixed inset-0 bg-black/40 backdrop-blur-sm z-50 opacity-0 pointer-events-none transition-opacity duration-300"></div>
+  
+  <div id="cartDrawer" class="fixed top-0 right-0 bottom-0 w-full max-w-md bg-white z-50 shadow-2xl translate-x-full transition-transform duration-300 flex flex-col">
+    
+    <!-- Cart Header -->
+    <div class="p-4 sm:p-5 border-b border-gray-200 flex items-center justify-between bg-white">
+      <div class="flex items-center gap-2">
+        <i data-lucide="shopping-bag" class="w-5 h-5 text-brand-600"></i>
+        <h3 class="font-bold text-gray-900 text-base">ตะกร้าสินค้าของคุณ</h3>
+        <span id="cartDrawerItemCount" class="text-xs bg-gray-100 text-gray-600 px-2 py-0.5 rounded-full font-medium">0 ชิ้น</span>
+      </div>
+      <button onclick="toggleCartDrawer()" class="p-1.5 rounded-full text-gray-400 hover:text-gray-700 hover:bg-gray-100">
+        <i data-lucide="x" class="w-5 h-5"></i>
+      </button>
+    </div>
+
+    <!-- Free Shipping Progress -->
+    <div class="bg-brand-50/70 p-3.5 border-b border-brand-100">
+      <div class="flex justify-between text-xs text-brand-900 font-medium mb-1">
+        <span id="freeShippingText">ซื้อเพิ่มอีก ฿599 เพื่อรับสิทธิ์จัดส่งฟรี!</span>
+        <span id="freeShippingStatus" class="font-bold">0%</span>
+      </div>
+      <div class="w-full bg-brand-200/50 rounded-full h-1.5 overflow-hidden">
+        <div id="freeShippingBar" class="bg-brand-600 h-1.5 rounded-full transition-all duration-300" style="width: 0%"></div>
+      </div>
+    </div>
+
+    <!-- Cart Items Scrollable List -->
+    <div id="cartItemsList" class="flex-1 overflow-y-auto p-4 sm:p-5 space-y-4">
+      <!-- Items dynamically populated -->
+    </div>
+
+    <!-- Empty Cart View -->
+    <div id="emptyCartView" class="hidden flex-1 flex flex-col items-center justify-center p-6 text-center">
+      <div class="w-16 h-16 rounded-full bg-gray-100 flex items-center justify-center text-gray-400 mb-3">
+        <i data-lucide="shopping-bag" class="w-8 h-8"></i>
+      </div>
+      <h4 class="text-base font-bold text-gray-800">ไม่มีสินค้าในตะกร้า</h4>
+      <p class="text-xs text-gray-500 mt-1 max-w-xs">เลือกชมผลิตภัณฑ์และเซตบำรุงผิวที่เหมาะกับคุณได้เลยค่ะ</p>
+      <button onclick="toggleCartDrawer(); location.href='#shop'" class="mt-4 px-5 py-2.5 bg-brand-600 hover:bg-brand-700 text-white rounded-xl text-xs font-semibold shadow-sm">
+        เลือกซื้อสินค้าตอนนี้
+      </button>
+    </div>
+
+    <!-- Cart Footer & Checkout Summary -->
+    <div id="cartFooter" class="p-4 sm:p-5 border-t border-gray-200 bg-gray-50/70 space-y-3">
+      
+      <!-- Promo Code Input -->
+      <div class="flex gap-2">
+        <div class="relative flex-1">
+          <input 
+            type="text" 
+            id="couponInput" 
+            placeholder="โค้ดส่วนลด (ลองใส่ LUMINA15)" 
+            class="w-full text-xs uppercase px-3 py-2 rounded-lg border border-gray-300 focus:outline-none focus:border-brand-500 font-mono"
+          >
+        </div>
+        <button onclick="applyCoupon()" class="px-3.5 py-2 bg-gray-800 hover:bg-black text-white text-xs font-medium rounded-lg transition">
+          ใช้โค้ด
+        </button>
+      </div>
+      <div id="appliedCouponInfo" class="hidden text-xs flex items-center justify-between bg-emerald-50 text-emerald-800 px-3 py-1.5 rounded-md border border-emerald-200">
+        <span class="flex items-center gap-1 font-medium">
+          <i data-lucide="tag" class="w-3.5 h-3.5"></i>
+          <span id="appliedCouponCode">LUMINA15</span>
+        </span>
+        <button onclick="removeCoupon()" class="text-emerald-700 hover:text-red-500 underline text-[11px]">ยกเลิก</button>
+      </div>
+
+      <!-- Price Breakdown -->
+      <div class="space-y-1.5 text-xs text-gray-600 pt-1">
+        <div class="flex justify-between">
+          <span>ยอดรวมสินค้า</span>
+          <span id="cartSubtotal" class="font-medium text-gray-900">฿0</span>
+        </div>
+        <div id="discountRow" class="flex justify-between text-rose-600 hidden">
+          <span>ส่วนลดพิเศษ</span>
+          <span id="cartDiscount">-฿0</span>
+        </div>
+        <div class="flex justify-between">
+          <span>ค่าจัดส่ง</span>
+          <span id="cartShipping" class="font-medium">฿50</span>
+        </div>
+        <div class="flex justify-between text-sm font-bold text-gray-900 border-t border-gray-200 pt-2">
+          <span>ยอดชำระสุทธิ</span>
+          <span id="cartTotal" class="text-base text-brand-700">฿0</span>
+        </div>
+      </div>
+
+      <!-- Checkout Button -->
+      <button onclick="openCheckoutModal()" class="w-full py-3.5 rounded-xl bg-brand-600 hover:bg-brand-700 text-white font-semibold text-sm shadow-lg shadow-brand-600/20 transition flex items-center justify-center gap-2">
+        <span>ดำเนินการสั่งซื้อและชำระเงิน</span>
+        <i data-lucide="arrow-right" class="w-4 h-4"></i>
+      </button>
+
+      <p class="text-[11px] text-gray-400 text-center flex items-center justify-center gap-1">
+        <i data-lucide="shield" class="w-3.5 h-3.5 text-emerald-600"></i> ชำระเงินปลอดภัย 100% ผ่าน PromptPay & บัตรเครดิต
+      </p>
+
+    </div>
+  </div>
+
+  <!-- ================= WISHLIST DRAWER ================= -->
+  <div id="wishlistDrawerBackdrop" onclick="toggleWishlistDrawer()" class="fixed inset-0 bg-black/40 backdrop-blur-sm z-50 opacity-0 pointer-events-none transition-opacity duration-300"></div>
+  
+  <div id="wishlistDrawer" class="fixed top-0 right-0 bottom-0 w-full max-w-md bg-white z-50 shadow-2xl translate-x-full transition-transform duration-300 flex flex-col">
+    <div class="p-4 sm:p-5 border-b border-gray-200 flex items-center justify-between">
+      <div class="flex items-center gap-2">
+        <i data-lucide="heart" class="w-5 h-5 text-rose-500"></i>
+        <h3 class="font-bold text-gray-900 text-base">รายการที่ถูกใจ (Wishlist)</h3>
+      </div>
+      <button onclick="toggleWishlistDrawer()" class="p-1.5 rounded-full text-gray-400 hover:text-gray-700 hover:bg-gray-100">
+        <i data-lucide="x" class="w-5 h-5"></i>
+      </button>
+    </div>
+
+    <div id="wishlistItemsList" class="flex-1 overflow-y-auto p-4 sm:p-5 space-y-3">
+      <!-- Items dynamically populated -->
+    </div>
+
+    <div id="emptyWishlistView" class="hidden flex-1 flex flex-col items-center justify-center p-6 text-center">
+      <div class="w-16 h-16 rounded-full bg-rose-50 flex items-center justify-center text-rose-400 mb-3">
+        <i data-lucide="heart" class="w-8 h-8"></i>
+      </div>
+      <h4 class="text-base font-bold text-gray-800">ยังไม่มีสินค้าในรายการโปรด</h4>
+      <p class="text-xs text-gray-500 mt-1">กดไอคอนหัวใจที่สินค้าที่คุณสนใจเพื่อบันทึกไว้ดูภายหลัง</p>
+    </div>
+  </div>
+
+  <!-- ================= PRODUCT QUICK VIEW MODAL ================= -->
+  <div id="productModal" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+    <div class="bg-white rounded-3xl max-w-3xl w-full max-h-[90vh] overflow-y-auto shadow-2xl border border-gray-100 relative animate-in fade-in zoom-in-95 duration-200">
+      
+      <!-- Close button -->
+      <button onclick="closeModal('productModal')" class="absolute top-4 right-4 z-10 p-2 rounded-full bg-white/80 hover:bg-white text-gray-600 hover:text-black shadow-sm transition">
+        <i data-lucide="x" class="w-5 h-5"></i>
+      </button>
+
+      <div class="grid grid-cols-1 md:grid-cols-2">
+        <!-- Product Image -->
+        <div class="relative bg-gray-50 flex items-center justify-center p-6 min-h-[300px]">
+          <img id="modalProductImg" src="" alt="" class="max-h-80 w-auto object-contain rounded-2xl shadow-sm">
+          <span id="modalProductBadge" class="absolute top-4 left-4 text-[10px] font-bold px-2.5 py-1 rounded-full uppercase tracking-wider bg-brand-600 text-white shadow-sm">
+            Bestseller
+          </span>
+        </div>
+
+        <!-- Product Details -->
+        <div class="p-6 sm:p-8 flex flex-col justify-between">
+          <div>
+            <span id="modalProductCategory" class="text-xs uppercase font-bold tracking-wider text-brand-600">SERUM</span>
+            <h3 id="modalProductName" class="text-xl font-bold text-gray-900 mt-1">Lumina Radiance Serum</h3>
+            <p id="modalProductVol" class="text-xs text-gray-500 mb-2">ขนาด 30 ml (ใช้ได้ประมาณ 1-2 เดือน)</p>
+
+            <div class="flex items-center gap-2 mb-3">
+              <div class="flex text-amber-400 text-xs" id="modalProductStars">
+                <!-- Stars -->
+              </div>
+              <span id="modalProductRating" class="text-xs font-semibold text-gray-700">4.9</span>
+              <span id="modalProductReviews" class="text-xs text-gray-400">(184 รีวิว)</span>
+            </div>
+
+            <div class="flex items-baseline gap-3 mb-4">
+              <span id="modalProductPrice" class="text-2xl font-bold text-brand-700">฿690</span>
+              <span id="modalProductOldPrice" class="text-sm text-gray-400 line-through">฿890</span>
+              <span id="modalProductDiscountTag" class="text-[10px] bg-rose-100 text-rose-700 font-bold px-1.5 py-0.5 rounded">-22%</span>
+            </div>
+
+            <!-- Tabbed description / ingredients / how to use -->
+            <div class="border-b border-gray-200 mb-3 flex gap-4 text-xs font-semibold">
+              <button onclick="switchModalTab('desc')" id="modalTabDesc" class="pb-2 border-b-2 border-brand-600 text-brand-700">จุดเด่นสินค้า</button>
+              <button onclick="switchModalTab('actives')" id="modalTabActives" class="pb-2 text-gray-500 hover:text-gray-800">สารสกัดสำคัญ</button>
+              <button onclick="switchModalTab('usage')" id="modalTabUsage" class="pb-2 text-gray-500 hover:text-gray-800">วิธีใช้</button>
+            </div>
+
+            <div id="modalTabContentDesc" class="text-xs text-gray-600 leading-relaxed mb-4">
+              <p id="modalProductDesc">คำอธิบายสินค้า</p>
+            </div>
+
+            <div id="modalTabContentActives" class="text-xs text-gray-600 leading-relaxed mb-4 hidden">
+              <div id="modalProductActives" class="space-y-1.5">
+                <!-- Actives list -->
+              </div>
+            </div>
+
+            <div id="modalTabContentUsage" class="text-xs text-gray-600 leading-relaxed mb-4 hidden">
+              <p id="modalProductUsage" class="bg-gray-50 p-3 rounded-xl border border-gray-200">
+                วิธีใช้: ทาบำรุงทั่วใบหน้าและลำคอเป็นประจำทุกเช้าและก่อนนอน เป็นขั้นตอนหลังลงโทนเนอร์
+              </p>
+            </div>
+          </div>
+
+          <!-- Quantity and Action Buttons -->
+          <div class="pt-4 border-t border-gray-200 space-y-3">
+            <div class="flex items-center justify-between">
+              <span class="text-xs text-gray-600 font-medium">จำนวนที่ต้องการ:</span>
+              <div class="flex items-center border border-gray-300 rounded-lg overflow-hidden">
+                <button onclick="adjustModalQty(-1)" class="px-3 py-1 bg-gray-50 hover:bg-gray-100 text-gray-600 text-sm font-bold">-</button>
+                <span id="modalQtyDisplay" class="px-4 py-1 text-xs font-semibold">1</span>
+                <button onclick="adjustModalQty(1)" class="px-3 py-1 bg-gray-50 hover:bg-gray-100 text-gray-600 text-sm font-bold">+</button>
+              </div>
+            </div>
+
+            <div class="grid grid-cols-2 gap-2">
+              <button onclick="addModalProductToCart()" class="w-full py-3 rounded-xl bg-brand-50 hover:bg-brand-100 text-brand-800 font-semibold text-xs border border-brand-200 transition flex items-center justify-center gap-1.5">
+                <i data-lucide="shopping-bag" class="w-4 h-4"></i>
+                <span>ใส่ตะกร้า</span>
+              </button>
+              <button onclick="buyNowFromModal()" class="w-full py-3 rounded-xl bg-brand-600 hover:bg-brand-700 text-white font-semibold text-xs shadow-md shadow-brand-600/20 transition flex items-center justify-center gap-1.5">
+                <span>ซื้อทันที</span>
+                <i data-lucide="arrow-right" class="w-4 h-4"></i>
+              </button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ================= CHECKOUT MODAL ================= -->
+  <div id="checkoutModal" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+    <div class="bg-white rounded-3xl max-w-2xl w-full max-h-[92vh] overflow-y-auto shadow-2xl border border-gray-100 relative p-6 sm:p-8 animate-in fade-in zoom-in-95 duration-200">
+      
+      <button onclick="closeModal('checkoutModal')" class="absolute top-5 right-5 p-2 rounded-full bg-gray-100 hover:bg-gray-200 text-gray-600">
+        <i data-lucide="x" class="w-5 h-5"></i>
+      </button>
+
+      <div class="flex items-center gap-2 mb-6 border-b border-gray-200 pb-4">
+        <div class="w-9 h-9 rounded-xl bg-brand-600 text-white flex items-center justify-center">
+          <i data-lucide="credit-card" class="w-5 h-5"></i>
+        </div>
+        <div>
+          <h3 class="text-lg font-bold text-gray-900">ชำระเงิน & กรอกที่อยู่จัดส่ง</h3>
+          <p class="text-xs text-gray-500">กรอกข้อมูลผู้รับและเลือกวิธีชำระเงิน</p>
+        </div>
+      </div>
+
+      <form id="checkoutForm" onsubmit="processOrder(event)" class="space-y-6">
+        
+        <!-- Step 1: Shipping Address -->
+        <div>
+          <h4 class="text-xs font-bold uppercase tracking-wider text-brand-700 mb-3 flex items-center gap-1.5">
+            <span class="w-5 h-5 rounded-full bg-brand-100 text-brand-800 flex items-center justify-center text-[10px] font-bold">1</span>
+            ข้อมูลผู้รับและสถานที่จัดส่ง
+          </h4>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
+            <div>
+              <label class="block text-gray-700 font-medium mb-1">ชื่อ - นามสกุล ผู้รับ *</label>
+              <input type="text" id="custName" required placeholder="เช่น ธนกฤต สุขเกษม" class="w-full px-3.5 py-2.5 rounded-xl border border-gray-300 focus:outline-none focus:border-brand-500">
+            </div>
+
+            <div>
+              <label class="block text-gray-700 font-medium mb-1">เบอร์โทรศัพท์ติดต่อ *</label>
+              <input type="tel" id="custPhone" required placeholder="เช่น 081-234-5678" class="w-full px-3.5 py-2.5 rounded-xl border border-gray-300 focus:outline-none focus:border-brand-500">
+            </div>
+
+            <div class="sm:col-span-2">
+              <label class="block text-gray-700 font-medium mb-1">ที่อยู่จัดส่งโดยละเอียด *</label>
+              <textarea id="custAddress" required rows="2" placeholder="เลขที่บ้าน, ถนน, แขวง/ตำบล, เขต/อำเภอ, จังหวัด, รหัสไปรษณีย์" class="w-full px-3.5 py-2 rounded-xl border border-gray-300 focus:outline-none focus:border-brand-500"></textarea>
+            </div>
+
+            <div class="sm:col-span-2">
+              <label class="block text-gray-700 font-medium mb-1">หมายเหตุเพิ่มเติมถึงผู้จัดส่ง (ถ้ามี)</label>
+              <input type="text" id="custNote" placeholder="เช่น ฝากไว้ที่ป้อม รปภ., วางหน้าบ้าน" class="w-full px-3.5 py-2 rounded-xl border border-gray-300 focus:outline-none focus:border-brand-500">
+            </div>
+          </div>
+        </div>
+
+        <!-- Step 2: Payment Method Selection -->
+        <div>
+          <h4 class="text-xs font-bold uppercase tracking-wider text-brand-700 mb-3 flex items-center gap-1.5">
+            <span class="w-5 h-5 rounded-full bg-brand-100 text-brand-800 flex items-center justify-center text-[10px] font-bold">2</span>
+            เลือกช่องทางการชำระเงิน
+          </h4>
+
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs">
+            <!-- PromptPay QR -->
+            <label class="p-3.5 rounded-xl border-2 border-brand-500 bg-brand-50/50 cursor-pointer flex flex-col justify-between payment-opt transition" onclick="selectPaymentMethod('promptpay')">
+              <div class="flex items-center justify-between mb-2">
+                <input type="radio" name="paymentMethod" value="promptpay" checked class="text-brand-600 focus:ring-brand-500">
+                <span class="text-[10px] bg-brand-200 text-brand-800 font-bold px-1.5 py-0.5 rounded">แนะนำ</span>
+              </div>
+              <div class="font-bold text-gray-800">QR PromptPay</div>
+              <p class="text-[10px] text-gray-500 mt-0.5">สแกนจ่ายผ่านทุกแอปธนาคาร ไม่มีค่าธรรมเนียม</p>
+            </label>
+
+            <!-- Credit / Debit Card -->
+            <label class="p-3.5 rounded-xl border-2 border-gray-200 hover:border-gray-300 cursor-pointer flex flex-col justify-between payment-opt transition" onclick="selectPaymentMethod('card')">
+              <div class="flex items-center justify-between mb-2">
+                <input type="radio" name="paymentMethod" value="card" class="text-brand-600 focus:ring-brand-500">
+                <i data-lucide="credit-card" class="w-4 h-4 text-gray-400"></i>
+              </div>
+              <div class="font-bold text-gray-800">บัตรเครดิต/เดบิต</div>
+              <p class="text-[10px] text-gray-500 mt-0.5">Visa, Mastercard, JCB ปลอดภัยมาตรฐาน 3D Secure</p>
+            </label>
+
+            <!-- Cash on Delivery (COD) -->
+            <label class="p-3.5 rounded-xl border-2 border-gray-200 hover:border-gray-300 cursor-pointer flex flex-col justify-between payment-opt transition" onclick="selectPaymentMethod('cod')">
+              <div class="flex items-center justify-between mb-2">
+                <input type="radio" name="paymentMethod" value="cod" class="text-brand-600 focus:ring-brand-500">
+                <i data-lucide="banknote" class="w-4 h-4 text-gray-400"></i>
+              </div>
+              <div class="font-bold text-gray-800">เก็บเงินปลายทาง</div>
+              <p class="text-[10px] text-gray-500 mt-0.5">ชำระเงินสดหรือโอนกับพนักงานเมื่อได้รับของ</p>
+            </label>
+          </div>
+
+          <!-- PromptPay QR Display Preview -->
+          <div id="promptpayPreview" class="mt-4 p-4 rounded-2xl bg-gray-50 border border-gray-200 text-center">
+            <p class="text-xs font-bold text-gray-800 mb-2">สแกน QR Code เพื่อชำระเงิน</p>
+            <div class="inline-block p-3 bg-white rounded-2xl shadow-sm border border-gray-200 mb-2">
+              <!-- Visual Mockup PromptPay QR -->
+              <div class="w-36 h-36 bg-gray-900 mx-auto rounded-lg flex flex-col items-center justify-center text-white p-2 relative overflow-hidden">
+                <div class="absolute inset-2 border-2 border-dashed border-gray-600 rounded flex items-center justify-center">
+                  <div class="text-center">
+                    <i data-lucide="qr-code" class="w-16 h-16 mx-auto text-emerald-400 mb-1"></i>
+                    <span class="text-[9px] font-mono tracking-widest text-gray-300">PROMPTPAY</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <p class="text-xs text-gray-600 font-medium">ชื่อบัญชี: บจก. ลูมินา เดอร์มา แลบ (ประเทศไทย)</p>
+            <p class="text-xs text-brand-700 font-bold mt-1">ยอดชำระ: <span id="checkoutAmountDisplay" class="text-sm">฿0</span></p>
+          </div>
+        </div>
+
+        <!-- Order Summary Mini Card -->
+        <div class="bg-brand-50/60 p-4 rounded-2xl border border-brand-200 text-xs space-y-1.5">
+          <div class="flex justify-between font-medium text-gray-700">
+            <span>จำนวนสินค้าในออเดอร์:</span>
+            <span id="checkoutItemCount">0 ชิ้น</span>
+          </div>
+          <div class="flex justify-between font-bold text-gray-900 text-sm border-t border-brand-200/60 pt-2">
+            <span>ยอดชำระสุทธิ:</span>
+            <span id="checkoutTotalFinal" class="text-brand-800 text-base">฿0</span>
+          </div>
+        </div>
+
+        <!-- Submit Button -->
+        <button type="submit" class="w-full py-4 rounded-xl bg-brand-600 hover:bg-brand-700 text-white font-bold text-sm shadow-xl shadow-brand-600/25 transition flex items-center justify-center gap-2">
+          <i data-lucide="check" class="w-4 h-4"></i>
+          <span>ยืนยันการสั่งซื้อสินค้า</span>
+        </button>
+
+      </form>
+
+    </div>
+  </div>
+
+  <!-- ================= ORDER SUCCESS CONFIRMATION MODAL ================= -->
+  <div id="orderSuccessModal" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+    <div class="bg-white rounded-3xl max-w-md w-full shadow-2xl border border-gray-100 p-6 sm:p-8 text-center animate-in fade-in zoom-in-95 duration-200">
+      
+      <div class="w-16 h-16 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center mx-auto mb-4 animate-pulse">
+        <i data-lucide="check-circle" class="w-8 h-8"></i>
+      </div>
+
+      <h3 class="text-xl font-bold text-gray-900">สั่งซื้อสินค้าสำเร็จแล้ว!</h3>
+      <p class="text-xs text-gray-500 mt-1">ขอบคุณที่ไว้วางใจให้ LUMINA ดูแลผิวคุณค่ะ</p>
+
+      <div class="bg-gray-50 rounded-2xl p-4 my-5 text-left border border-gray-200 text-xs space-y-2">
+        <div class="flex justify-between">
+          <span class="text-gray-500">หมายเลขคำสั่งซื้อ:</span>
+          <span id="successOrderCode" class="font-mono font-bold text-brand-700">LM-98231</span>
+        </div>
+        <div class="flex justify-between">
+          <span class="text-gray-500">ผู้สั่งซื้อ:</span>
+          <span id="successCustName" class="font-medium text-gray-800">-</span>
+        </div>
+        <div class="flex justify-between">
+          <span class="text-gray-500">วิธีการชำระเงิน:</span>
+          <span id="successPaymentType" class="font-medium text-gray-800">QR PromptPay</span>
+        </div>
+        <div class="flex justify-between font-bold border-t border-gray-200 pt-2 text-gray-900">
+          <span>ยอดชำระสุทธิ:</span>
+          <span id="successTotal" class="text-brand-700">฿0</span>
+        </div>
+      </div>
+
+      <div class="space-y-2">
+        <button onclick="viewTrackingFromSuccess()" class="w-full py-3 bg-brand-600 hover:bg-brand-700 text-white rounded-xl text-xs font-semibold shadow-md flex items-center justify-center gap-1.5">
+          <i data-lucide="truck" class="w-4 h-4"></i>
+          <span>ติดตามสถานะพัสดุนี้ทันที</span>
+        </button>
+        <button onclick="closeModal('orderSuccessModal')" class="w-full py-2.5 text-xs text-gray-500 hover:text-gray-800">
+          กลับสู่หน้าหลัก
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ================= ORDER TRACKING MODAL ================= -->
+  <div id="trackingModal" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+    <div class="bg-white rounded-3xl max-w-lg w-full shadow-2xl border border-gray-100 p-6 sm:p-8 relative">
+      
+      <button onclick="closeModal('trackingModal')" class="absolute top-5 right-5 p-2 rounded-full bg-gray-100 hover:bg-gray-200 text-gray-600">
+        <i data-lucide="x" class="w-5 h-5"></i>
+      </button>
+
+      <div class="flex items-center gap-2 mb-5">
+        <div class="w-9 h-9 rounded-xl bg-brand-100 text-brand-700 flex items-center justify-center">
+          <i data-lucide="truck" class="w-5 h-5"></i>
+        </div>
+        <div>
+          <h3 class="text-lg font-bold text-gray-900">ติดตามสถานะคำสั่งซื้อ</h3>
+          <p class="text-xs text-gray-500">กรอกหมายเลขคำสั่งซื้อเพื่อตรวจสอบสถานะจัดส่ง</p>
+        </div>
+      </div>
+
+      <!-- Tracking Search Input -->
+      <div class="flex gap-2 mb-6">
+        <input 
+          type="text" 
+          id="trackingInput" 
+          placeholder="เช่น LM-84920 หรือ LM-98231" 
+          class="flex-1 text-xs uppercase px-3.5 py-2.5 rounded-xl border border-gray-300 font-mono focus:outline-none focus:border-brand-500"
+        >
+        <button onclick="searchTracking()" class="px-4 py-2.5 bg-brand-600 hover:bg-brand-700 text-white text-xs font-semibold rounded-xl">
+          ตรวจสอบ
+        </button>
+      </div>
+
+      <!-- Tracking Timeline Result -->
+      <div id="trackingResult" class="space-y-4 border-t border-gray-100 pt-4">
+        <div class="flex justify-between items-center text-xs">
+          <span class="text-gray-500">หมายเลขอ้างอิง: <strong id="trackOrderNum" class="text-gray-800 font-mono">LM-84920</strong></span>
+          <span class="px-2 py-0.5 rounded-full text-[10px] font-bold bg-emerald-100 text-emerald-800">กำลังนำส่ง</span>
+        </div>
+
+        <div class="relative pl-6 space-y-6 before:absolute before:left-2 before:top-2 before:bottom-2 before:w-0.5 before:bg-brand-200 text-xs">
+          
+          <div class="relative">
+            <div class="absolute -left-6 top-0.5 w-4 h-4 rounded-full bg-emerald-500 border-2 border-white ring-2 ring-emerald-200"></div>
+            <p class="font-bold text-gray-900">พัสดุอยู่ระหว่างการนำจ่าย (Out for delivery)</p>
+            <p class="text-[11px] text-gray-500">เจ้าหน้าที่ขนส่ง Kerry Express กำลังนำส่งพัสดุถึงคุณ</p>
+            <span class="text-[10px] text-gray-400">วันนี้ 09:30 น.</span>
+          </div>
+
+          <div class="relative">
+            <div class="absolute -left-6 top-0.5 w-4 h-4 rounded-full bg-brand-600 border-2 border-white"></div>
+            <p class="font-bold text-gray-800">ศูนย์คัดแยกสินค้าหลัก (DC กรุงเทพฯ)</p>
+            <p class="text-[11px] text-gray-500">ส่งต่อพัสดุไปยังสาขาปลายทางเรียบร้อยแล้ว</p>
+            <span class="text-[10px] text-gray-400">เมื่อวาน 21:15 น.</span>
+          </div>
+
+          <div class="relative">
+            <div class="absolute -left-6 top-0.5 w-4 h-4 rounded-full bg-gray-300 border-2 border-white"></div>
+            <p class="font-bold text-gray-700">บรรจุหีบห่อและรับพัสดุเข้าคลังแล็บ</p>
+            <p class="text-[11px] text-gray-500">ตรวจสอบคุณภาพและซีลสูญญากาศเรียบร้อย</p>
+            <span class="text-[10px] text-gray-400">เมื่อวาน 14:00 น.</span>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ================= ADD REVIEW MODAL ================= -->
+  <div id="addReviewModal" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+    <div class="bg-white rounded-3xl max-w-md w-full shadow-2xl border border-gray-100 p-6 relative">
+      <button onclick="closeModal('addReviewModal')" class="absolute top-5 right-5 p-2 rounded-full bg-gray-100 hover:bg-gray-200 text-gray-600">
+        <i data-lucide="x" class="w-5 h-5"></i>
+      </button>
+
+      <h3 class="text-lg font-bold text-gray-900 mb-1">แบ่งปันผลลัพธ์ผิวของคุณ</h3>
+      <p class="text-xs text-gray-500 mb-4">รีวิวของคุณช่วยให้เพื่อนๆ เลือกสกินแคร์ที่เหมาะกับผิวได้ดียิ่งขึ้น</p>
+
+      <form onsubmit="submitReview(event)" class="space-y-3 text-xs">
+        <div>
+          <label class="block text-gray-700 font-medium mb-1">ชื่อหรือนามแฝง *</label>
+          <input type="text" id="revAuthor" required placeholder="เช่น คุณมุก (ผิวผสม)" class="w-full px-3 py-2 rounded-xl border border-gray-300 focus:outline-none focus:border-brand-500">
+        </div>
+
+        <div>
+          <label class="block text-gray-700 font-medium mb-1">ให้คะแนนความพึงพอใจ *</label>
+          <select id="revRating" class="w-full px-3 py-2 rounded-xl border border-gray-300 focus:outline-none focus:border-brand-500 bg-white">
+            <option value="5">⭐⭐⭐⭐⭐ 5 ดาว (ประทับใจมาก ผิวดีขึ้นชัดเจน)</option>
+            <option value="4">⭐⭐⭐⭐ 4 ดาว (ชอบมาก อ่อนโยน ไม่แพ้)</option>
+            <option value="3">⭐⭐⭐ 3 ดาว (ปานกลาง)</option>
+          </select>
+        </div>
+
+        <div>
+          <label class="block text-gray-700 font-medium mb-1">สินค้าที่คุณใช้งาน *</label>
+          <select id="revProductSelect" class="w-full px-3 py-2 rounded-xl border border-gray-300 focus:outline-none focus:border-brand-500 bg-white">
+            <!-- options inserted by script -->
+          </select>
+        </div>
+
+        <div>
+          <label class="block text-gray-700 font-medium mb-1">ความประทับใจและผลลัพธ์ที่สังเกตได้ *</label>
+          <textarea id="revComment" required rows="3" placeholder="เช่น ใช้มา 2 สัปดาห์ สิวผดลดลง รอยแดงจางลงชัดเจน เนื้อบางเบาซึมไวมาก..." class="w-full px-3 py-2 rounded-xl border border-gray-300 focus:outline-none focus:border-brand-500"></textarea>
+        </div>
+
+        <button type="submit" class="w-full py-3 bg-brand-600 hover:bg-brand-700 text-white font-semibold rounded-xl text-xs shadow-md">
+          ส่งรีวิวเพื่อเผยแพร่
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- ================= TOAST NOTIFICATION POPUP ================= -->
+  <div id="toast" class="fixed bottom-20 lg:bottom-8 right-4 sm:right-8 bg-gray-900 text-white px-4 py-3 rounded-2xl shadow-2xl flex items-center gap-3 z-50 translate-y-24 opacity-0 transition-all duration-300 text-xs">
+    <div id="toastIcon" class="w-6 h-6 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center">
+      <i data-lucide="check" class="w-3.5 h-3.5"></i>
+    </div>
+    <span id="toastMessage">ข้อความแจ้งเตือน</span>
+  </div>
+
+  <!-- ================= APPLICATION LOGIC (VANILLA JAVASCRIPT) ================= -->
+  <script>
+    /* =========================================================
+       1. DATA DEFINITIONS (PRODUCTS, ROUTINE, REVIEWS)
+       ========================================================= */
+    const PRODUCTS = [
+      {
+        id: 'p1',
+        name: 'Lumina Clarifying Amino Foam Cleanser',
+        thaiName: 'โฟมล้างหน้าอะมิโนแอซิด สูตรปลอบประโลมผิว',
+        category: 'cleanser',
+        concerns: ['acne', 'barrier', 'hydration'],
+        price: 390,
+        originalPrice: 450,
+        volume: '150 ml',
+        rating: 4.9,
+        reviewsCount: 218,
+        badge: 'Bestseller',
+        image: 'https://images.unsplash.com/photo-1556228720-195a672e8a03?w=800&auto=format&fit=crop&q=80',
+        actives: ['Amino Acid Base', 'Centella Asiatica', 'Ceramides NP', 'Allantoin'],
+        desc: 'คลีนเซอร์เนื้อโฟมอณูละเอียด pH 5.5 ทำความสะอาดลึกถึงรูขุมขน ขจัดสิ่งสกปรกและมลภาวะโดยไม่ทำลายเกราะป้องกันผิว ล้างแล้วหน้านุ่มชุ่มชื้น ไม่แห้งตึง',
+        usage: 'ปั๊มโฟม 1-2 ปั๊มลงบนฝ่ามือ นวดวนเบาๆ ทั่วใบหน้าที่เปียก แล้วล้างออกด้วยน้ำสะอาด เช้า-เย็น'
+      },
+      {
+        id: 'p2',
+        name: 'Lumina Hydro-Biome Essence Toner',
+        thaiName: 'โทนเนอร์น้ำตบพรีไบโอติกส์ เสริมเกราะป้องกันผิว',
+        category: 'cleanser',
+        concerns: ['barrier', 'hydration'],
+        price: 550,
+        originalPrice: 690,
+        volume: '200 ml',
+        rating: 4.8,
+        reviewsCount: 164,
+        badge: 'Derm-Tested',
+        image: 'https://images.unsplash.com/photo-1601049541289-9b1b7bbbfe19?w=800&auto=format&fit=crop&q=80',
+        actives: ['Prebiotics Complex', '8D Hyaluronic', 'Panthenol B5', 'Chamomile'],
+        desc: 'น้ำตบฟื้นฟูไมโครไบโอมบนผิว ปรับสมดุลผิวหลังล้างหน้า เติมน้ำลึกให้ผิวฉ่ำวาว เตรียมผิวให้พร้อมรับการบำรุงในขั้นตอนต่อไป',
+        usage: 'หยดลงบนฝ่ามือ 4-5 หยด แล้วตบเบาๆ ทั่วใบหน้า หรือเทใส่สำลีเช็ดเพื่อปลอบประโลมผิว'
+      },
+      {
+        id: 'p3',
+        name: 'Lumina Radiance Booster Niacinamide 10% Serum',
+        thaiName: 'เซรั่มไนอะซินาไมด์ 10% ลดรอยสิว คุมมัน กระชับรูขุมขน',
+        category: 'serum',
+        concerns: ['acne', 'brightening'],
+        price: 690,
+        originalPrice: 890,
+        volume: '30 ml',
+        rating: 4.9,
+        reviewsCount: 432,
+        badge: 'Top Ranked',
+        image: 'https://images.unsplash.com/photo-1620916566398-39f1143ab7be?w=800&auto=format&fit=crop&q=80',
+        actives: ['Niacinamide 10%', 'Zinc PCA 1%', 'Alpha Arbutin', 'Licorice Root'],
+        desc: 'เซรั่มเข้มข้นเนื้อบางเบา ซึมไว ไม่เหนียวเหนอะหนะ ช่วยสลายรอยดำรอยแดงจากสิว ปรับผิวให้กระจ่างใส สีผิวสม่ำเสมอ และควบคุมความมันตลอดวัน',
+        usage: 'ดรอปเปอร์ 2-3 หยด ทาทั่วใบหน้าและลำคอเป็นประจำทุกเช้าและก่อนนอน'
+      },
+      {
+        id: 'p4',
+        name: 'Lumina Barrier Repair 5X Ceramide Cream',
+        thaiName: 'มอยส์เจอร์ไรเซอร์ครีมล็อคผิวชุ่มชื้น 72 ชม.',
+        category: 'moisturizer',
+        concerns: ['barrier', 'hydration'],
+        price: 620,
+        originalPrice: 750,
+        volume: '50 ml',
+        rating: 4.9,
+        reviewsCount: 289,
+        badge: 'Must Have',
+        image: 'https://images.unsplash.com/photo-1608248597359-5613589b210e?w=800&auto=format&fit=crop&q=80',
+        actives: ['5X Ceramides', 'Plant Squalane', 'Hyaluronic Acid', 'Madecassoside'],
+        desc: 'ครีมบำรุงกู้ผิวพัง ซ่อมแซมเกราะป้องกันผิวที่ถูกทำลาย กักเก็บความชุ่มชื้นยาวนาน 72 ชั่วโมง ปลอบประโลมผิวแห้งลอก แสบแดง ให้กลับมาเนียนนุ่มแข็งแรง',
+        usage: 'ตักครีมขนาดเท่าเหรียญบาท วอร์มที่ปลายนิ้วแล้วทาทั่วใบหน้าและลำคอเป็นขั้นตอนสุดท้ายก่อนนอน'
+      },
+      {
+        id: 'p5',
+        name: 'Lumina Invisible Watery Sunscreen SPF50+ PA++++',
+        thaiName: 'ครีมกันแดดสูตรน้ำ บางเบาดุจเซรั่ม ไม่วอก คุมมัน',
+        category: 'sunscreen',
+        concerns: ['brightening', 'barrier', 'acne'],
+        price: 490,
+        originalPrice: 590,
+        volume: '50 ml',
+        rating: 4.9,
+        reviewsCount: 512,
+        badge: 'Award Winner',
+        image: 'https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?w=800&auto=format&fit=crop&q=80',
+        actives: ['Hybrid UV Filters', 'Hyaluronic Acid', 'Cica Extract', 'Vitamin E'],
+        desc: 'กันแดดเนื้อน้ำสูตรไฮบริด ปกป้องผิวขั้นสุดจากรังสี UVA, UVB และ Blue Light ซึมซาบไวใน 5 วินาที ไม่ทิ้งคราบขาว ไม่เหนียว ไม่เป็นขุย แต่งหน้าต่อได้ทันที',
+        usage: 'ทาปริมาณ 2 ข้อนิ้วให้ทั่วใบหน้าและลำคอ ก่อนออกแดด 15-20 นาที'
+      },
+      {
+        id: 'p6',
+        name: 'Lumina Pore-Clearing BHA 2% Liquid Exfoliant',
+        thaiName: 'โลชั่นผลัดเซลล์ผิว สลายสิวเสี้ยน สิวอุดตัน',
+        category: 'treatment',
+        concerns: ['acne'],
+        price: 480,
+        originalPrice: 590,
+        volume: '100 ml',
+        rating: 4.8,
+        reviewsCount: 198,
+        badge: 'Acne Care',
+        image: 'https://images.unsplash.com/photo-1617897903246-719242758050?w=800&auto=format&fit=crop&q=80',
+        actives: ['Salicylic Acid 2%', 'Tea Tree Oil', 'Green Tea Extract', 'Allantoin'],
+        desc: 'สูตรละลายไขมันอุดตันในรูขุมขนอย่างล้ำลึก ผลัดเซลล์ผิวที่ตายแล้วอย่างอ่อนโยน ลดการเกิดสิวเสี้ยนและสิวอุดตันอย่างมีประสิทธิภาพ เผยผิวเนียนเรียบ',
+        usage: 'ใช้สัปดาห์ละ 2-3 ครั้งในตอนกลางคืน หลังล้างหน้า เทใส่สำลีแล้วเช็ดบางๆ เว้นรอบดวงตา'
+      },
+      {
+        id: 'p7',
+        name: 'Lumina C-Glow 15% Pure Vitamin C Ampoule',
+        thaiName: 'แอมพูลวิตามินซีบริสุทธิ์ 15% บูสต์ผิวโกลว์ กระจ่างใส',
+        category: 'serum',
+        concerns: ['brightening'],
+        price: 790,
+        originalPrice: 990,
+        volume: '20 ml',
+        rating: 4.7,
+        reviewsCount: 142,
+        badge: 'New Formula',
+        image: 'https://images.unsplash.com/photo-1570554886111-e80fcca6a029?w=800&auto=format&fit=crop&q=80',
+        actives: ['Pure L-Ascorbic Acid 15%', 'Ferulic Acid', 'Glutathione', 'Vitamin E'],
+        desc: 'แอนตี้ออกซิแดนท์เข้มข้นสูง ต่อต้านอนุมูลอิสระ กระตุ้นคอลลาเจน ลดเลือนจุดด่างดำฝังลึก และปรับผิวหมองคล้ำให้เปล่งประกายมีออร่าเสมือนเปิดไฟให้ผิว',
+        usage: 'ทา 3-4 หยดในตอนเช้าตามด้วยครีมกันแดด เพื่อปกป้องผิวจากแสงแดดอย่างมีประสิทธิภาพสูงสุด'
+      },
+      {
+        id: 'p8',
+        name: 'Lumina Overnight Cica Calming Sleep Mask',
+        thaiName: 'สลีปปิ้งมาสก์กู้ผิวโทรม ปลอบประโลมข้ามคืน',
+        category: 'treatment',
+        concerns: ['barrier', 'acne', 'hydration'],
+        price: 520,
+        originalPrice: 650,
+        volume: '80 ml',
+        rating: 4.9,
+        reviewsCount: 177,
+        badge: 'Night Care',
+        image: 'https://images.unsplash.com/photo-1567928815104-b7980ee5032e?w=800&auto=format&fit=crop&q=80',
+        actives: ['Centella Asiatica 50,000ppm', 'Madecassoside', 'Trehalose', 'Ceramides'],
+        desc: 'มาสก์เจลเย็นสดชื่น ฟื้นบำรุงผิวที่ระคายเคืองและเหนื่อยล้าจากการเผชิญมลภาวะ ล็อคสารบำรุงตลอดคืน ตื่นมารู้สึกถึงผิวที่นุ่ม ฉ่ำฟู สดใส และลดรอยแดงชัดเจน',
+        usage: 'พอกหนาๆ ทั่วใบหน้าก่อนนอนโดยไม่ต้องล้างออก สัปดาห์ละ 3-4 ครั้ง'
+      },
+      {
+        id: 'p9',
+        name: 'Lumina Daily Glow 3-Step Starter Bundle',
+        thaiName: 'เซต 3 ชิ้นเริ่มต้นกู้ผิวใสสุขภาพดี (โฟม + เซรั่ม + กันแดด)',
+        category: 'bundle',
+        concerns: ['brightening', 'acne', 'hydration'],
+        price: 1390,
+        originalPrice: 1890,
+        volume: 'เซต 3 ชิ้น (ประหยัด ฿500)',
+        rating: 5.0,
+        reviewsCount: 310,
+        badge: 'Save 26%',
+        image: 'https://images.unsplash.com/photo-1556228722-d0b9d0cd5bbf?w=800&auto=format&fit=crop&q=80',
+        actives: ['Amino Acid', 'Niacinamide 10%', 'Zinc PCA', 'Hybrid UV Filter'],
+        desc: 'เซตรูทีนเบสิกยอดฮิต ครบทุกสเต็ปการทำความสะอาด ฟื้นบำรุง และปกป้องผิว จัดการรอยสิว ผิวหมองคล้ำ คุมมัน ให้ผิวเรียบเนียนโกลว์สวยใน 14 วัน',
+        usage: 'เช้า: โฟมล้างหน้า > เซรั่มไนอะซินาไมด์ > ครีมกันแดด / ก่อนนอน: โฟมล้างหน้า > เซรั่มไนอะซินาไมด์'
+      },
+      {
+        id: 'p10',
+        name: 'Lumina Acne & Barrier Rescue 4-Step Set',
+        thaiName: 'เซต 4 ชิ้นกู้ผิวพัง สยบสิว เสริมชั้นผิวแข็งแรง',
+        category: 'bundle',
+        concerns: ['acne', 'barrier'],
+        price: 1850,
+        originalPrice: 2480,
+        volume: 'เซต 4 ชิ้น (ประหยัด ฿630)',
+        rating: 4.9,
+        reviewsCount: 245,
+        badge: 'Doctor Recommended',
+        image: 'https://images.unsplash.com/photo-1512290900672-1f55b9a89668?w=800&auto=format&fit=crop&q=80',
+        actives: ['BHA 2%', '5X Ceramides', 'Centella Asiatica', 'Prebiotics'],
+        desc: 'เซตดูแลปัญหาผิวขั้นสุดสำหรับผิวเป็นสิวเรื้อรังและผิวแพ้ง่าย เคลียร์สิวอุดตัน สมานการอักเสบ และสร้างเกราะผิวใหม่ให้แข็งแรง ป้องกันสิวเกิดซ้ำ',
+        usage: 'ทำตามลำดับขั้นตอน AM/PM ที่ระบุในคู่มือพิเศษแถมฟรีในกล่อง'
+      }
+    ];
+
+    const REVIEWS_DATA = [
+      {
+        id: 'r1',
+        author: 'พัชชา ช.',
+        skinType: 'ผิวผสม เป็นสิวง่าย',
+        product: 'Niacinamide 10% Serum',
+        stars: 5,
+        date: '3 วันที่แล้ว',
+        comment: 'ประทับใจมากค่ะ! ใช้เซรั่มตัวนี้มา 2 อาทิตย์ รอยดำจากสิวที่บีบไว้จางลงอย่างเห็นได้ชัด หน้าไม่มันเยิ้มระหว่างวันด้วย เนื้อเซรั่มไม่เหนอะหนะเลย ซึมไวมากๆ ซื้อขวดที่สองแน่นอนค่ะ'
+      },
+      {
+        id: 'r2',
+        author: 'ดนิตา พ.',
+        skinType: 'ผิวแห้ง แพ้ง่ายมาก',
+        product: 'Barrier Repair 5X Ceramide Cream',
+        stars: 5,
+        date: '1 สัปดาห์ที่แล้ว',
+        comment: 'ปกติแพ้ครีมง่ายมาก พอมาลองใช้ครีมเซราไมด์ของ Lumina ผิวที่เคยลอกเป็นขุยตรงข้างจมูกหายสนิท ผิวฟูขึ้น นุ่มละเอียดขึ้นอย่างรู้สึกได้ ทาก่อนนอนตื่นมาหน้าเด้งสุดๆ แนะนำคนผิวแห้งต้องมีค่ะ'
+      },
+      {
+        id: 'r3',
+        author: 'กิตติศักดิ์ ร.',
+        skinType: 'ผิวมัน มีสิวอุดตัน',
+        product: 'Invisible Watery Sunscreen SPF50+',
+        stars: 5,
+        date: '2 สัปดาห์ที่แล้ว',
+        comment: 'เป็นผู้ชายที่ไม่ชอบทากันแดดเลยเพราะกลัวเหนียว แต่ตัวนี้คือดีจริง เนื้อเป็นน้ำทาแล้วซึมหายไปเลย ไม่วอก ไม่มัน ไม่ทำให้เป็นสิวเพิ่ม คุ้มราคามากครับ'
+      }
+    ];
+
+    const ROUTINE_STEPS_MORNING = [
+      { step: 1, name: 'คลีนเซอร์', desc: 'ล้างความมันส่วนเกินและเซลล์ผิวเก่าอย่างอ่อนโยนด้วย Amino Foam pH 5.5', product: 'Amino Foam Cleanser' },
+      { step: 2, name: 'โทนเนอร์น้ำตบ', desc: 'ปรับสมดุล pH ผิว เติมพรีไบโอติกส์เพื่อเตรียมผิวให้ดูดซึมสารอาหารได้เต็มที่', product: 'Hydro-Biome Essence Toner' },
+      { step: 3, name: 'เซรั่มบำรุง', desc: 'ลง Niacinamide หรือ Vitamin C เพื่อลดเลือนรอยสิวและต่อต้านอนุมูลอิสระ', product: 'Niacinamide 10% Serum' },
+      { step: 4, name: 'มอยส์เจอร์ไรเซอร์', desc: 'ทาเนื้อเจล/ครีมบางเบา เพื่อกักเก็บความชุ่มชื้นตลอดวัน', product: 'Barrier Repair Cream' },
+      { step: 5, name: 'ครีมกันแดด', desc: 'ขั้นตอนสำคัญที่สุด! ทากันแดด 2 ข้อนิ้ว ปกป้องผิวจากรังสียูวีและแสงสีฟ้า', product: 'Invisible Watery Sunscreen' }
+    ];
+
+    const ROUTINE_STEPS_NIGHT = [
+      { step: 1, name: 'ดับเบิ้ลคลีนซิ่ง', desc: 'ทำความสะอาดคราบกันแดด มลภาวะ และเมคอัพให้หมดจด ไม่ให้อุดตันรูขุมขน', product: 'Amino Foam Cleanser' },
+      { step: 2, name: 'ผลัดเซลล์ผิว / โทนเนอร์', desc: 'ใช้ BHA 2% (2-3 ครั้ง/สัปดาห์) สลายสิวเสี้ยน และปรับสภาพผิวเรียบเนียน', product: 'BHA 2% Liquid' },
+      { step: 3, name: 'เซรั่มฟื้นฟูเข้มข้น', desc: 'หยดเซรั่มเข้มข้นบำรุงลึกถึงชั้นผิว ซ่อมแซมโครงสร้างผิวขณะหลับ', product: 'Niacinamide 10% Serum' },
+      { step: 4, name: 'มอยส์เจอร์ไรเซอร์เข้มข้น', desc: 'เคลือบผิวด้วยเซราไมด์ 5 ชนิด ล็อคความชุ่มชื้น ป้องกันผิวสูญเสียน้ำ', product: 'Barrier Repair Cream' },
+      { step: 5, name: 'สลีปปิ้งมาสก์', desc: 'พอก Overnight Cica Mask ปลอบประโลมผิวอักเสบ ตื่นมาผิวฟูอิ่มน้ำ', product: 'Overnight Cica Mask' }
+    ];
+
+    /* =========================================================
+       2. STATE MANAGEMENT (CART, WISHLIST, FILTERS, QUIZ)
+       ========================================================= */
+    let cart = JSON.parse(localStorage.getItem('lumina_cart') || '[]');
+    let wishlist = JSON.parse(localStorage.getItem('lumina_wishlist') || '[]');
+    let currentCategory = 'all';
+    let currentConcern = 'all';
+    let searchQuery = '';
+    let sortMode = 'featured';
+    let appliedCoupon = null; // { code: 'LUMINA15', discountPercent: 15 }
+    let modalSelectedProduct = null;
+    let modalQuantity = 1;
+    let currentQuizAnswers = { step1: null, step2: null, step3: null };
+
+    /* =========================================================
+       3. INITIALIZATION
+       ========================================================= */
+    document.addEventListener('DOMContentLoaded', () => {
+      renderProducts();
+      renderRoutineGuide('morning');
+      renderReviews();
+      updateCartUI();
+      updateWishlistUI();
+      populateReviewProductOptions();
+      lucide.createIcons();
+    });
+
+    /* =========================================================
+       4. PRODUCTS RENDERING & FILTERING
+       ========================================================= */
+    function renderProducts() {
+      const grid = document.getElementById('productsGrid');
+      const emptyState = document.getElementById('noProductsFound');
+      const resultsText = document.getElementById('resultsCountText');
+
+      let filtered = PRODUCTS.filter(p => {
+        // Category filter
+        if (currentCategory !== 'all' && p.category !== currentCategory) return false;
+        // Concern filter
+        if (currentConcern !== 'all' && !p.concerns.includes(currentConcern)) return false;
+        // Search query
+        if (searchQuery.trim() !== '') {
+          const q = searchQuery.toLowerCase();
+          const matchName = p.name.toLowerCase().includes(q) || p.thaiName.toLowerCase().includes(q);
+          const matchActives = p.actives.some(a => a.toLowerCase().includes(q));
+          if (!matchName && !matchActives) return false;
+        }
+        return true;
+      });
+
+      // Sorting
+      if (sortMode === 'price-low') {
+        filtered.sort((a, b) => a.price - b.price);
+      } else if (sortMode === 'price-high') {
+        filtered.sort((a, b) => b.price - a.price);
+      } else if (sortMode === 'rating') {
+        filtered.sort((a, b) => b.rating - a.rating);
+      }
+
+      resultsText.innerText = `กำลังแสดง ${filtered.length} รายการ`;
+
+      if (filtered.length === 0) {
+        grid.innerHTML = '';
+        emptyState.classList.remove('hidden');
+        return;
+      }
+
+      emptyState.classList.add('hidden');
+
+      grid.innerHTML = filtered.map(p => {
+        const isWishlisted = wishlist.includes(p.id);
+        const discountPct = Math.round(((p.originalPrice - p.price) / p.originalPrice) * 100);
+
+        return `
+          <div class="bg-white rounded-2xl border border-gray-200/90 overflow-hidden shadow-sm hover:shadow-xl hover:border-brand-300 transition-all duration-300 flex flex-col group">
+            
+            <!-- Image & Badge Container -->
+            <div class="relative bg-gray-50 aspect-square overflow-hidden cursor-pointer" onclick="openProductModal('${p.id}')">
+              <img 
+                src="${p.image}" 
+                alt="${p.name}" 
+                class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
+                loading="lazy"
+              >
+              
+              <!-- Badges -->
+              <div class="absolute top-3 left-3 flex flex-col gap-1 items-start">
+                <span class="text-[10px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wider bg-brand-700 text-white shadow-sm">
+                  ${p.badge}
+                </span>
+                ${discountPct > 0 ? `<span class="text-[10px] font-bold px-1.5 py-0.5 rounded bg-rose-500 text-white">-${discountPct}%</span>` : ''}
+              </div>
+
+              <!-- Wishlist Toggle Button -->
+              <button 
+                onclick="event.stopPropagation(); toggleWishlist('${p.id}')" 
+                class="absolute top-3 right-3 p-2 rounded-full bg-white/90 backdrop-blur-sm text-gray-500 hover:text-rose-500 shadow-sm transition hover:scale-110"
+                title="ถูกใจ"
+              >
+                <i data-lucide="heart" class="w-4 h-4 ${isWishlisted ? 'fill-rose-500 text-rose-500' : ''}"></i>
+              </button>
+            </div>
+
+            <!-- Content Details -->
+            <div class="p-4 sm:p-5 flex-1 flex flex-col justify-between">
+              <div>
+                <div class="flex items-center justify-between text-xs text-gray-400 mb-1">
+                  <span class="uppercase tracking-wider font-semibold text-brand-600 text-[10px]">${p.category}</span>
+                  <span class="flex items-center gap-1 text-amber-500 font-bold">
+                    <i data-lucide="star" class="w-3 h-3 fill-amber-400"></i> ${p.rating}
+                    <span class="text-gray-400 font-normal text-[10px]">(${p.reviewsCount})</span>
+                  </span>
+                </div>
+
+                <h3 onclick="openProductModal('${p.id}')" class="text-sm font-bold text-gray-900 group-hover:text-brand-600 transition cursor-pointer line-clamp-1">
+                  ${p.name}
+                </h3>
+                <p class="text-xs text-gray-500 mt-0.5 line-clamp-1">${p.thaiName}</p>
+
+                <!-- Active Ingredients Badges -->
+                <div class="flex flex-wrap gap-1 mt-2.5">
+                  ${p.actives.slice(0, 2).map(act => `
+                    <span class="text-[10px] bg-gray-100 text-gray-600 px-2 py-0.5 rounded-md font-medium">
+                      ${act}
+                    </span>
+                  `).join('')}
+                </div>
+              </div>
+
+              <!-- Price & Add-to-cart Action -->
+              <div class="mt-4 pt-3 border-t border-gray-100 flex items-center justify-between">
+                <div>
+                  <div class="flex items-baseline gap-1.5">
+                    <span class="text-base font-bold text-brand-700">฿${p.price.toLocaleString()}</span>
+                    <span class="text-xs text-gray-400 line-through">฿${p.originalPrice.toLocaleString()}</span>
+                  </div>
+                  <span class="text-[10px] text-gray-400">${p.volume}</span>
+                </div>
+
+                <button 
+                  onclick="addToCart('${p.id}', 1)" 
+                  class="px-3 py-2 rounded-xl bg-brand-50 hover:bg-brand-600 text-brand-700 hover:text-white font-medium text-xs transition flex items-center gap-1.5 shadow-sm"
+                  title="ใส่ตะกร้า"
+                >
+                  <i data-lucide="shopping-bag" class="w-3.5 h-3.5"></i>
+                  <span>ใส่ตะกร้า</span>
+                </button>
+              </div>
+
+            </div>
+
+          </div>
+        `;
+      }).join('');
+
+      lucide.createIcons();
+    }
+
+    function setCategory(cat) {
+      currentCategory = cat;
+      document.querySelectorAll('.cat-pill').forEach(btn => {
+        if (btn.dataset.category === cat) {
+          btn.className = 'cat-pill active px-4 py-2 rounded-full font-medium transition whitespace-nowrap bg-brand-600 text-white shadow-sm';
+        } else {
+          btn.className = 'cat-pill px-4 py-2 rounded-full font-medium transition whitespace-nowrap bg-white text-gray-700 hover:bg-gray-100 border border-gray-200';
+        }
+      });
+      renderProducts();
+    }
+
+    function setConcern(con) {
+      currentConcern = con;
+      document.querySelectorAll('.concern-pill').forEach(btn => {
+        if (btn.dataset.concern === con) {
+          btn.className = 'concern-pill active text-brand-800 bg-brand-50 px-2.5 py-1 rounded-md font-medium';
+        } else {
+          btn.className = 'concern-pill text-gray-600 hover:text-brand-700 px-2.5 py-1 rounded-md';
+        }
+      });
+      renderProducts();
+    }
+
+    function handleSearch(val) {
+      searchQuery = val;
+      const clearBtn = document.getElementById('clearSearchBtn');
+      if (clearBtn) {
+        if (val.trim()) clearBtn.classList.remove('hidden');
+        else clearBtn.classList.add('hidden');
+      }
+      renderProducts();
+    }
+
+    function clearSearch() {
+      searchQuery = '';
+      const input = document.getElementById('searchInput');
+      if (input) input.value = '';
+      const clearBtn = document.getElementById('clearSearchBtn');
+      if (clearBtn) clearBtn.classList.add('hidden');
+      renderProducts();
+    }
+
+    function applyFiltersAndSort() {
+      sortMode = document.getElementById('sortSelect').value;
+      renderProducts();
+    }
+
+    function resetFilters() {
+      currentCategory = 'all';
+      currentConcern = 'all';
+      searchQuery = '';
+      sortMode = 'featured';
+      setCategory('all');
+      setConcern('all');
+      clearSearch();
+    }
+
+    function filterByIngredient(ing) {
+      location.href = '#shop';
+      const searchInput = document.getElementById('searchInput');
+      if (searchInput) {
+        searchInput.value = ing;
+        handleSearch(ing);
+      }
+      showToast(`กรองสินค้าที่มีสารสกัด: ${ing}`);
+    }
+
+    /* =========================================================
+       5. PRODUCT QUICK VIEW MODAL
+       ========================================================= */
+    function openProductModal(productId) {
+      const product = PRODUCTS.find(p => p.id === productId);
+      if (!product) return;
+
+      modalSelectedProduct = product;
+      modalQuantity = 1;
+
+      document.getElementById('modalProductImg').src = product.image;
+      document.getElementById('modalProductBadge').innerText = product.badge;
+      document.getElementById('modalProductCategory').innerText = product.category;
+      document.getElementById('modalProductName').innerText = product.name;
+      document.getElementById('modalProductVol').innerText = `ขนาด ${product.volume} (เหมาะกับ: ${product.concerns.join(', ')})`;
+      document.getElementById('modalProductRating').innerText = product.rating;
+      document.getElementById('modalProductReviews').innerText = `(${product.reviewsCount} รีวิว)`;
+      document.getElementById('modalProductPrice').innerText = `฿${product.price.toLocaleString()}`;
+      document.getElementById('modalProductOldPrice').innerText = `฿${product.originalPrice.toLocaleString()}`;
+      
+      const discount = Math.round(((product.originalPrice - product.price) / product.originalPrice) * 100);
+      document.getElementById('modalProductDiscountTag').innerText = `-${discount}%`;
+
+      document.getElementById('modalProductDesc').innerText = product.desc;
+      document.getElementById('modalProductUsage').innerText = `วิธีใช้: ${product.usage}`;
+
+      const activesContainer = document.getElementById('modalProductActives');
+      activesContainer.innerHTML = product.actives.map(act => `
+        <div class="flex items-center gap-2">
+          <span class="w-1.5 h-1.5 rounded-full bg-brand-500"></span>
+          <span class="font-medium text-gray-800">${act}</span>
+        </div>
+      `).join('');
+
+      // Stars
+      const starsContainer = document.getElementById('modalProductStars');
+      starsContainer.innerHTML = Array(5).fill(0).map((_, i) => `
+        <i data-lucide="star" class="w-3.5 h-3.5 ${i < Math.floor(product.rating) ? 'fill-amber-400 text-amber-400' : 'text-gray-300'}"></i>
+      `).join('');
+
+      document.getElementById('modalQtyDisplay').innerText = modalQuantity;
+      switchModalTab('desc');
+
+      openModal('productModal');
+      lucide.createIcons();
+    }
+
+    function switchModalTab(tab) {
+      const descTab = document.getElementById('modalTabDesc');
+      const activesTab = document.getElementById('modalTabActives');
+      const usageTab = document.getElementById('modalTabUsage');
+
+      const descContent = document.getElementById('modalTabContentDesc');
+      const activesContent = document.getElementById('modalTabContentActives');
+      const usageContent = document.getElementById('modalTabContentUsage');
+
+      [descTab, activesTab, usageTab].forEach(t => t.className = 'pb-2 text-gray-500 hover:text-gray-800');
+      [descContent, activesContent, usageContent].forEach(c => c.classList.add('hidden'));
+
+      if (tab === 'desc') {
+        descTab.className = 'pb-2 border-b-2 border-brand-600 text-brand-700 font-semibold';
+        descContent.classList.remove('hidden');
+      } else if (tab === 'actives') {
+        activesTab.className = 'pb-2 border-b-2 border-brand-600 text-brand-700 font-semibold';
+        activesContent.classList.remove('hidden');
+      } else if (tab === 'usage') {
+        usageTab.className = 'pb-2 border-b-2 border-brand-600 text-brand-700 font-semibold';
+        usageContent.classList.remove('hidden');
+      }
+    }
+
+    function adjustModalQty(delta) {
+      modalQuantity = Math.max(1, modalQuantity + delta);
+      document.getElementById('modalQtyDisplay').innerText = modalQuantity;
+    }
+
+    function addModalProductToCart() {
+      if (!modalSelectedProduct) return;
+      addToCart(modalSelectedProduct.id, modalQuantity);
+      closeModal('productModal');
+    }
+
+    function buyNowFromModal() {
+      if (!modalSelectedProduct) return;
+      addToCart(modalSelectedProduct.id, modalQuantity);
+      closeModal('productModal');
+      openCheckoutModal();
+    }
+
+    /* =========================================================
+       6. CART & WISHLIST LOGIC
+       ========================================================= */
+    function addToCart(productId, qty = 1) {
+      const product = PRODUCTS.find(p => p.id === productId);
+      if (!product) return;
+
+      const existingIndex = cart.findIndex(item => item.id === productId);
+      if (existingIndex > -1) {
+        cart[existingIndex].qty += qty;
+      } else {
+        cart.push({
+          id: product.id,
+          name: product.name,
+          price: product.price,
+          volume: product.volume,
+          image: product.image,
+          qty: qty
+        });
+      }
+
+      saveCart();
+      updateCartUI();
+      showToast(`เพิ่ม "${product.name}" ลงในตะกร้าแล้ว`);
+    }
+
+    function updateCartItemQty(productId, delta) {
+      const index = cart.findIndex(item => item.id === productId);
+      if (index === -1) return;
+
+      cart[index].qty += delta;
+      if (cart[index].qty <= 0) {
+        cart.splice(index, 1);
+      }
+      saveCart();
+      updateCartUI();
+    }
+
+    function removeCartItem(productId) {
+      cart = cart.filter(item => item.id !== productId);
+      saveCart();
+      updateCartUI();
+    }
+
+    function saveCart() {
+      localStorage.setItem('lumina_cart', JSON.stringify(cart));
+    }
+
+    function updateCartUI() {
+      const totalCount = cart.reduce((sum, item) => sum + item.qty, 0);
+      const subtotal = cart.reduce((sum, item) => sum + (item.price * item.qty), 0);
+
+      // Header Badges
+      document.getElementById('cartCountBadge').innerText = totalCount;
+      const mobileBadge = document.getElementById('mobileCartCount');
+      if (mobileBadge) mobileBadge.innerText = totalCount;
+      document.getElementById('cartDrawerItemCount').innerText = `${totalCount} ชิ้น`;
+
+      // Free shipping threshold (599 THB)
+      const freeShipThreshold = 599;
+      const freeShipBar = document.getElementById('freeShippingBar');
+      const freeShipText = document.getElementById('freeShippingText');
+      const freeShipStatus = document.getElementById('freeShippingStatus');
+
+      let shippingFee = subtotal >= freeShipThreshold || subtotal === 0 ? 0 : 50;
+      if (appliedCoupon && appliedCoupon.code === 'FREESHIP') {
+        shippingFee = 0;
+      }
+
+      if (subtotal >= freeShipThreshold) {
+        freeShipBar.style.width = '100%';
+        freeShipText.innerHTML = '🎉 ยอดสั่งซื้อถึงเกณฑ์! <strong>คุณได้รับสิทธิ์จัดส่งฟรี</strong>';
+        freeShipStatus.innerText = '100%';
+      } else {
+        const remaining = freeShipThreshold - subtotal;
+        const pct = Math.min(100, Math.round((subtotal / freeShipThreshold) * 100));
+        freeShipBar.style.width = `${pct}%`;
+        freeShipText.innerText = `ซื้อเพิ่มอีก ฿${remaining.toLocaleString()} เพื่อรับสิทธิ์จัดส่งฟรี!`;
+        freeShipStatus.innerText = `${pct}%`;
+      }
+
+      // Calculations with Coupon
+      let discountAmount = 0;
+      if (appliedCoupon) {
+        if (appliedCoupon.discountPercent) {
+          discountAmount = Math.round((subtotal * appliedCoupon.discountPercent) / 100);
+        } else if (appliedCoupon.fixedDiscount) {
+          discountAmount = Math.min(subtotal, appliedCoupon.fixedDiscount);
+        }
+      }
+
+      const total = Math.max(0, subtotal - discountAmount + shippingFee);
+
+      // Update drawer texts
+      document.getElementById('cartSubtotal').innerText = `฿${subtotal.toLocaleString()}`;
+      document.getElementById('cartShipping').innerText = shippingFee === 0 ? 'ฟรี (Free)' : `฿${shippingFee}`;
+      document.getElementById('cartTotal').innerText = `฿${total.toLocaleString()}`;
+
+      const discountRow = document.getElementById('discountRow');
+      if (discountAmount > 0) {
+        discountRow.classList.remove('hidden');
+        document.getElementById('cartDiscount').innerText = `-฿${discountAmount.toLocaleString()}`;
+      } else {
+        discountRow.classList.add('hidden');
+      }
+
+      // Render cart items list
+      const container = document.getElementById('cartItemsList');
+      const emptyView = document.getElementById('emptyCartView');
+      const footerView = document.getElementById('cartFooter');
+
+      if (cart.length === 0) {
+        container.innerHTML = '';
+        emptyView.classList.remove('hidden');
+        footerView.classList.add('hidden');
+      } else {
+        emptyView.classList.add('hidden');
+        footerView.classList.remove('hidden');
+
+        container.innerHTML = cart.map(item => `
+          <div class="flex items-center gap-3 p-3 bg-gray-50 rounded-2xl border border-gray-100">
+            <img src="${item.image}" alt="${item.name}" class="w-16 h-16 object-cover rounded-xl bg-white border border-gray-200 shrink-0">
+            <div class="flex-1 min-w-0">
+              <h4 class="text-xs font-bold text-gray-900 truncate">${item.name}</h4>
+              <p class="text-[11px] text-gray-500">${item.volume}</p>
+              <p class="text-xs font-bold text-brand-700 mt-0.5">฿${item.price.toLocaleString()}</p>
+            </div>
+            
+            <div class="flex flex-col items-end gap-1.5 shrink-0">
+              <button onclick="removeCartItem('${item.id}')" class="text-gray-400 hover:text-red-500 text-xs p-1" title="ลบสินค้า">
+                <i data-lucide="trash-2" class="w-3.5 h-3.5"></i>
+              </button>
+              <div class="flex items-center border border-gray-300 rounded-lg bg-white overflow-hidden text-xs">
+                <button onclick="updateCartItemQty('${item.id}', -1)" class="px-2 py-0.5 text-gray-600 hover:bg-gray-100 font-bold">-</button>
+                <span class="px-2 py-0.5 font-semibold text-[11px]">${item.qty}</span>
+                <button onclick="updateCartItemQty('${item.id}', 1)" class="px-2 py-0.5 text-gray-600 hover:bg-gray-100 font-bold">+</button>
+              </div>
+            </div>
+          </div>
+        `).join('');
+      }
+
+      lucide.createIcons();
+    }
+
+    function toggleCartDrawer() {
+      const drawer = document.getElementById('cartDrawer');
+      const backdrop = document.getElementById('cartDrawerBackdrop');
+      const isOpen = !drawer.classList.contains('translate-x-full');
+
+      if (isOpen) {
+        drawer.classList.add('translate-x-full');
+        backdrop.classList.remove('opacity-100', 'pointer-events-auto');
+        backdrop.classList.add('opacity-0', 'pointer-events-none');
+      } else {
+        drawer.classList.remove('translate-x-full');
+        backdrop.classList.remove('opacity-0', 'pointer-events-none');
+        backdrop.classList.add('opacity-100', 'pointer-events-auto');
+      }
+    }
+
+    /* Wishlist Functions */
+    function toggleWishlist(productId) {
+      const idx = wishlist.indexOf(productId);
+      if (idx > -1) {
+        wishlist.splice(idx, 1);
+        showToast('นำออกจากรายการที่ถูกใจแล้ว');
+      } else {
+        wishlist.push(productId);
+        showToast('บันทึกในรายการที่ถูกใจแล้ว ❤️');
+      }
+      localStorage.setItem('lumina_wishlist', JSON.stringify(wishlist));
+      updateWishlistUI();
+      renderProducts();
+    }
+
+    function updateWishlistUI() {
+      const count = wishlist.length;
+      const countEl = document.getElementById('wishlistCount');
+      const mobileCountEl = document.getElementById('mobileWishlistCount');
+
+      if (count > 0) {
+        countEl.innerText = count;
+        countEl.classList.remove('hidden');
+        if (mobileCountEl) {
+          mobileCountEl.innerText = count;
+          mobileCountEl.classList.remove('hidden');
+        }
+      } else {
+        countEl.classList.add('hidden');
+        if (mobileCountEl) mobileCountEl.classList.add('hidden');
+      }
+
+      // Render items inside Wishlist Drawer
+      const container = document.getElementById('wishlistItemsList');
+      const emptyView = document.getElementById('emptyWishlistView');
+
+      const wishlistedProducts = PRODUCTS.filter(p => wishlist.includes(p.id));
+
+      if (wishlistedProducts.length === 0) {
+        container.innerHTML = '';
+        emptyView.classList.remove('hidden');
+      } else {
+        emptyView.classList.add('hidden');
+        container.innerHTML = wishlistedProducts.map(p => `
+          <div class="flex items-center gap-3 p-3 bg-gray-50 rounded-2xl border border-gray-100">
+            <img src="${p.image}" alt="${p.name}" class="w-14 h-14 object-cover rounded-xl bg-white border border-gray-200 shrink-0">
+            <div class="flex-1 min-w-0">
+              <h4 class="text-xs font-bold text-gray-900 truncate">${p.name}</h4>
+              <p class="text-xs font-bold text-brand-700 mt-0.5">฿${p.price.toLocaleString()}</p>
+            </div>
+            <div class="flex items-center gap-1.5 shrink-0">
+              <button onclick="addToCart('${p.id}', 1)" class="p-2 bg-brand-600 text-white rounded-lg text-xs" title="ใส่ตะกร้า">
+                <i data-lucide="shopping-bag" class="w-3.5 h-3.5"></i>
+              </button>
+              <button onclick="toggleWishlist('${p.id}')" class="p-2 text-gray-400 hover:text-red-500 rounded-lg text-xs" title="ลบออก">
+                <i data-lucide="x" class="w-3.5 h-3.5"></i>
+              </button>
+            </div>
+          </div>
+        `).join('');
+      }
+
+      lucide.createIcons();
+    }
+
+    function toggleWishlistDrawer() {
+      const drawer = document.getElementById('wishlistDrawer');
+      const backdrop = document.getElementById('wishlistDrawerBackdrop');
+      const isOpen = !drawer.classList.contains('translate-x-full');
+
+      if (isOpen) {
+        drawer.classList.add('translate-x-full');
+        backdrop.classList.remove('opacity-100', 'pointer-events-auto');
+        backdrop.classList.add('opacity-0', 'pointer-events-none');
+      } else {
+        drawer.classList.remove('translate-x-full');
+        backdrop.classList.remove('opacity-0', 'pointer-events-none');
+        backdrop.classList.add('opacity-100', 'pointer-events-auto');
+      }
+    }
+
+    /* Coupon Code Functionality */
+    function applyCoupon() {
+      const input = document.getElementById('couponInput');
+      const code = input.value.trim().toUpperCase();
+
+      if (!code) return;
+
+      if (code === 'LUMINA15') {
+        appliedCoupon = { code: 'LUMINA15', discountPercent: 15 };
+        showToast('ใช้โค้ด LUMINA15 สำเร็จ! รับส่วนลด 15%');
+      } else if (code === 'GLOW50') {
+        appliedCoupon = { code: 'GLOW50', fixedDiscount: 50 };
+        showToast('ใช้โค้ด GLOW50 สำเร็จ! รับส่วนลด ฿50');
+      } else if (code === 'FREESHIP') {
+        appliedCoupon = { code: 'FREESHIP', discountPercent: 0 };
+        showToast('ใช้โค้ด FREESHIP สำเร็จ! ฟรีค่าจัดส่ง');
+      } else {
+        showToast('ขออภัย โค้ดส่วนลดนี้ไม่ถูกต้องหรือหมดอายุแล้ว');
+        return;
+      }
+
+      document.getElementById('appliedCouponCode').innerText = appliedCoupon.code;
+      document.getElementById('appliedCouponInfo').classList.remove('hidden');
+      input.value = '';
+      updateCartUI();
+    }
+
+    function removeCoupon() {
+      appliedCoupon = null;
+      document.getElementById('appliedCouponInfo').classList.add('hidden');
+      updateCartUI();
+      showToast('ยกเลิกการใช้โค้ดส่วนลดแล้ว');
+    }
+
+    function copyPromoCode(code) {
+      navigator.clipboard.writeText(code).then(() => {
+        showToast(`คัดลอกโค้ด "${code}" แล้ว! นำไปใส่ในตะกร้าได้เลย`);
+      }).catch(() => {
+        showToast(`โค้ดของคุณคือ: ${code}`);
+      });
+    }
+
+    /* =========================================================
+       7. SKINCARE ROUTINE QUIZ LOGIC
+       ========================================================= */
+    function selectQuizAnswer(step, val, text) {
+      if (step === 1) {
+        currentQuizAnswers.step1 = val;
+        goToQuizStep(2);
+      } else if (step === 2) {
+        currentQuizAnswers.step2 = val;
+        goToQuizStep(3);
+      } else if (step === 3) {
+        currentQuizAnswers.step3 = val;
+        finishQuiz();
+      }
+    }
+
+    function goToQuizStep(step) {
+      document.querySelectorAll('.quiz-step').forEach(el => el.classList.add('hidden'));
+      const target = document.getElementById(`quizStep${step}`);
+      if (target) target.classList.remove('hidden');
+
+      const title = document.getElementById('quizStepTitle');
+      const pbar = document.getElementById('quizProgressBar');
+      const pcent = document.getElementById('quizPercent');
+
+      if (step === 2) {
+        title.innerText = 'ขั้นตอนที่ 2 จาก 3: ปัญหาผิวที่กังวลที่สุด';
+        pbar.style.width = '66%';
+        pcent.innerText = '66%';
+      } else if (step === 3) {
+        title.innerText = 'ขั้นตอนที่ 3 จาก 3: ไลฟ์สไตล์และสภาพแวดล้อม';
+        pbar.style.width = '100%';
+        pcent.innerText = '100%';
+      }
+    }
+
+    function prevQuizStep(step) {
+      document.querySelectorAll('.quiz-step').forEach(el => el.classList.add('hidden'));
+      document.getElementById(`quizStep${step}`).classList.remove('hidden');
+
+      const title = document.getElementById('quizStepTitle');
+      const pbar = document.getElementById('quizProgressBar');
+      const pcent = document.getElementById('quizPercent');
+
+      if (step === 1) {
+        title.innerText = 'ขั้นตอนที่ 1 จาก 3: สภาพผิวปัจจุบันของคุณ';
+        pbar.style.width = '33%';
+        pcent.innerText = '33%';
+      } else if (step === 2) {
+        title.innerText = 'ขั้นตอนที่ 2 จาก 3: ปัญหาผิวที่กังวลที่สุด';
+        pbar.style.width = '66%';
+        pcent.innerText = '66%';
+      }
+    }
+
+    function finishQuiz() {
+      document.querySelectorAll('.quiz-step').forEach(el => el.classList.add('hidden'));
+      document.getElementById('quizResult').classList.remove('hidden');
+
+      const titleEl = document.getElementById('resultRoutineTitle');
+      const subEl = document.getElementById('resultRoutineSub');
+      const descEl = document.getElementById('resultRoutineDesc');
+      const container = document.getElementById('quizRecommendedProducts');
+
+      let recommendedIds = ['p1', 'p3', 'p5']; // default
+      let title = 'เซตรูทีนกู้ผิวใส ไร้รอยสิว (Acne & Glow Routine)';
+      let desc = 'ผิวของคุณต้องการควบคุมความมันส่วนเกิน สลายการอุดตันในรูขุมขน พร้อมลดเลือนรอยแดงรอยดำอย่างอ่อนโยน';
+
+      if (currentQuizAnswers.step1 === 'dry' || currentQuizAnswers.step2 === 'aging' || currentQuizAnswers.step3 === 'office') {
+        recommendedIds = ['p2', 'p4', 'p5'];
+        title = 'เซตรูทีนเติมน้ำลึก ฟื้นฟูเกราะผิวฉ่ำวาว (Hydro-Barrier Routine)';
+        desc = 'ผิวของคุณต้องการการเติมเต็มความชุ่มชื้นหลายมิติด้วย 8D Hyaluronic และ 5X Ceramides เพื่อเสริมชั้นผิวให้แข็งแรง ไม่ลอกเป็นขุย';
+      } else if (currentQuizAnswers.step2 === 'brightening') {
+        recommendedIds = ['p1', 'p7', 'p5'];
+        title = 'เซตรูทีนเปิดไฟให้ผิว กระจ่างใสมีออร่า (C-Glow Radiance Routine)';
+        desc = 'บูสต์ผิวกระจ่างใส สลายจุดด่างดำฝังลึกด้วยวิตามินซีบริสุทธิ์ 15% ร่วมกับกันแดดสูตรน้ำบางเบาเพื่อการปกป้องขั้นสุด';
+      } else if (currentQuizAnswers.step1 === 'sensitive' || currentQuizAnswers.step2 === 'barrier') {
+        recommendedIds = ['p1', 'p4', 'p8'];
+        title = 'เซตรูทีนปลอบประโลมผิวแพ้ง่ายขั้นสุด (Calming Cica Recovery)';
+        desc = 'สูตรปราศจากสารระคายเคือง 100% อัดแน่นด้วย Centella และ Ceramides เพื่อสมานผิว ลดอาการแสบแดง และฟื้นฟูผิวให้กลับมาแข็งแรง';
+      }
+
+      titleEl.innerText = title;
+      subEl.innerText = `วิเคราะห์จากข้อมูลสภาพผิว: ${currentQuizAnswers.step1 || 'ทั่วไป'}`;
+      descEl.innerText = desc;
+
+      const recProducts = PRODUCTS.filter(p => recommendedIds.includes(p.id));
+      container.innerHTML = recProducts.map(p => `
+        <div class="bg-white p-3 rounded-xl border border-gray-200 text-center flex flex-col justify-between">
+          <img src="${p.image}" alt="${p.name}" class="w-16 h-16 object-cover mx-auto rounded-lg mb-2">
+          <div>
+            <h5 class="text-xs font-bold text-gray-900 truncate">${p.name}</h5>
+            <p class="text-[10px] text-gray-500">${p.thaiName}</p>
+          </div>
+          <p class="text-xs font-bold text-brand-700 mt-2">฿${p.price.toLocaleString()}</p>
+        </div>
+      `).join('');
+
+      const bundleOriginal = recProducts.reduce((sum, p) => sum + p.price, 0);
+      const bundleDiscounted = Math.round(bundleOriginal * 0.85);
+
+      document.getElementById('quizBundleOldPrice').innerText = `฿${bundleOriginal.toLocaleString()}`;
+      document.getElementById('quizBundlePrice').innerText = `฿${bundleDiscounted.toLocaleString()}`;
+
+      // Save for 1-click cart
+      window.lastQuizBundle = recProducts;
+      lucide.createIcons();
+    }
+
+    function addQuizBundleToCart() {
+      if (!window.lastQuizBundle || window.lastQuizBundle.length === 0) return;
+      window.lastQuizBundle.forEach(p => {
+        addToCart(p.id, 1);
+      });
+      // Apply 15% discount coupon automatically
+      appliedCoupon = { code: 'LUMINA15', discountPercent: 15 };
+      document.getElementById('appliedCouponCode').innerText = 'LUMINA15';
+      document.getElementById('appliedCouponInfo').classList.remove('hidden');
+      updateCartUI();
+
+      showToast('เพิ่มเซตสกินแคร์พร้อมส่วนลด 15% ลงในตะกร้าเรียบร้อยแล้ว ✨');
+      toggleCartDrawer();
+    }
+
+    function resetQuiz() {
+      currentQuizAnswers = { step1: null, step2: null, step3: null };
+      document.getElementById('quizResult').classList.add('hidden');
+      document.getElementById('quizStep1').classList.remove('hidden');
+      document.getElementById('quizStepTitle').innerText = 'ขั้นตอนที่ 1 จาก 3: สภาพผิวปัจจุบันของคุณ';
+      document.getElementById('quizProgressBar').style.width = '33%';
+      document.getElementById('quizPercent').innerText = '33%';
+    }
+
+    /* =========================================================
+       8. ROUTINE GUIDE (AM/PM)
+       ========================================================= */
+    function switchRoutineMode(mode) {
+      const amTab = document.getElementById('routineMorningTab');
+      const pmTab = document.getElementById('routineNightTab');
+
+      if (mode === 'morning') {
+        amTab.className = 'px-5 py-2 rounded-lg text-xs font-semibold transition bg-white text-brand-800 shadow-sm flex items-center gap-1.5';
+        pmTab.className = 'px-5 py-2 rounded-lg text-xs font-semibold transition text-gray-600 hover:text-gray-900 flex items-center gap-1.5';
+        renderRoutineGuide('morning');
+      } else {
+        pmTab.className = 'px-5 py-2 rounded-lg text-xs font-semibold transition bg-white text-brand-800 shadow-sm flex items-center gap-1.5';
+        amTab.className = 'px-5 py-2 rounded-lg text-xs font-semibold transition text-gray-600 hover:text-gray-900 flex items-center gap-1.5';
+        renderRoutineGuide('night');
+      }
+    }
+
+    function renderRoutineGuide(mode) {
+      const container = document.getElementById('routineTimeline');
+      const steps = mode === 'morning' ? ROUTINE_STEPS_MORNING : ROUTINE_STEPS_NIGHT;
+
+      container.innerHTML = steps.map(s => `
+        <div class="bg-gray-50/80 p-5 rounded-2xl border border-gray-200 hover:border-brand-300 hover:bg-white hover:shadow-md transition duration-300 flex flex-col justify-between">
+          <div>
+            <div class="w-8 h-8 rounded-full bg-brand-100 text-brand-800 flex items-center justify-center text-xs font-bold mb-3">
+              0${s.step}
+            </div>
+            <h4 class="text-sm font-bold text-gray-900 mb-1">${s.name}</h4>
+            <p class="text-xs text-gray-500 leading-relaxed mb-4">${s.desc}</p>
+          </div>
+          <div class="pt-3 border-t border-gray-200/60">
+            <span class="text-[10px] text-brand-700 font-semibold block">แนะนำ:</span>
+            <span class="text-xs font-medium text-gray-800">${s.product}</span>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    /* =========================================================
+       9. CHECKOUT & ORDER PROCESSING
+       ========================================================= */
+    function openCheckoutModal() {
+      if (cart.length === 0) {
+        showToast('กรุณาเลือกสินค้าลงตะกร้าก่อนดำเนินการชำระเงินค่ะ');
+        return;
+      }
+
+      // Close Cart drawer if open
+      const drawer = document.getElementById('cartDrawer');
+      if (!drawer.classList.contains('translate-x-full')) {
+        toggleCartDrawer();
+      }
+
+      const totalCount = cart.reduce((sum, item) => sum + item.qty, 0);
+      const subtotal = cart.reduce((sum, item) => sum + (item.price * item.qty), 0);
+      let shipping = subtotal >= 599 || (appliedCoupon && appliedCoupon.code === 'FREESHIP') ? 0 : 50;
+      let discount = 0;
+      if (appliedCoupon) {
+        if (appliedCoupon.discountPercent) discount = Math.round((subtotal * appliedCoupon.discountPercent) / 100);
+        else if (appliedCoupon.fixedDiscount) discount = Math.min(subtotal, appliedCoupon.fixedDiscount);
+      }
+      const total = Math.max(0, subtotal - discount + shipping);
+
+      document.getElementById('checkoutItemCount').innerText = `${totalCount} ชิ้น`;
+      document.getElementById('checkoutTotalFinal').innerText = `฿${total.toLocaleString()}`;
+      document.getElementById('checkoutAmountDisplay').innerText = `฿${total.toLocaleString()}`;
+
+      openModal('checkoutModal');
+    }
+
+    function selectPaymentMethod(method) {
+      const promptpayPreview = document.getElementById('promptpayPreview');
+      if (method === 'promptpay') {
+        promptpayPreview.classList.remove('hidden');
+      } else {
+        promptpayPreview.classList.add('hidden');
+      }
+    }
+
+    function processOrder(e) {
+      e.preventDefault();
+
+      const name = document.getElementById('custName').value.trim();
+      const phone = document.getElementById('custPhone').value.trim();
+      const address = document.getElementById('custAddress').value.trim();
+      const paymentMethod = document.querySelector('input[name="paymentMethod"]:checked').value;
+
+      if (!name || !phone || !address) {
+        alert('กรุณากรอกข้อมูลที่อยู่ให้ครบถ้วน');
+        return;
+      }
+
+      const orderCode = 'LM-' + Math.floor(10000 + Math.random() * 90000);
+      const finalTotal = document.getElementById('checkoutTotalFinal').innerText;
+
+      // Close checkout modal
+      closeModal('checkoutModal');
+
+      // Populate success modal
+      document.getElementById('successOrderCode').innerText = orderCode;
+      document.getElementById('successCustName').innerText = `${name} (${phone})`;
+      document.getElementById('successPaymentType').innerText = paymentMethod === 'promptpay' ? 'QR PromptPay (ชำระแล้ว)' : (paymentMethod === 'card' ? 'บัตรเครดิต/เดบิต' : 'เก็บเงินปลายทาง (COD)');
+      document.getElementById('successTotal').innerText = finalTotal;
+
+      // Reset cart
+      cart = [];
+      appliedCoupon = null;
+      saveCart();
+      updateCartUI();
+
+      // Show success modal
+      openModal('orderSuccessModal');
+      lucide.createIcons();
+    }
+
+    function viewTrackingFromSuccess() {
+      const code = document.getElementById('successOrderCode').innerText;
+      closeModal('orderSuccessModal');
+      document.getElementById('trackingInput').value = code;
+      searchTracking();
+      openModal('trackingModal');
+    }
+
+    function searchTracking() {
+      const input = document.getElementById('trackingInput').value.trim();
+      const orderNum = document.getElementById('trackOrderNum');
+      if (input) {
+        orderNum.innerText = input.toUpperCase();
+      }
+      showToast('อัปเดตข้อมูลสถานะพัสดุล่าสุดแล้ว');
+    }
+
+    /* =========================================================
+       10. REVIEWS & COMMUNITY
+       ========================================================= */
+    function renderReviews() {
+      const container = document.getElementById('reviewsList');
+      container.innerHTML = REVIEWS_DATA.map(r => `
+        <div class="bg-gray-50/70 p-6 rounded-3xl border border-gray-200/90 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-3">
+              <div class="flex text-amber-400">
+                ${Array(r.stars).fill(0).map(() => `<i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>`).join('')}
+              </div>
+              <span class="text-[11px] text-gray-400">${r.date}</span>
+            </div>
+
+            <p class="text-xs text-gray-700 leading-relaxed italic mb-4">"${r.comment}"</p>
+          </div>
+
+          <div class="pt-4 border-t border-gray-200/60 flex items-center gap-3">
+            <div class="w-9 h-9 rounded-full bg-brand-200 text-brand-900 font-bold text-xs flex items-center justify-center shrink-0">
+              ${r.author.charAt(0)}
+            </div>
+            <div>
+              <p class="text-xs font-bold text-gray-900">${r.author}</p>
+              <p class="text-[10px] text-brand-700 font-medium">${r.skinType} • ${r.product}</p>
+            </div>
+          </div>
+        </div>
+      `).join('');
+      lucide.createIcons();
+    }
+
+    function populateReviewProductOptions() {
+      const select = document.getElementById('revProductSelect');
+      if (!select) return;
+      select.innerHTML = PRODUCTS.map(p => `
+        <option value="${p.name}">${p.name} (${p.volume})</option>
+      `).join('');
+    }
+
+    function submitReview(e) {
+      e.preventDefault();
+      const author = document.getElementById('revAuthor').value.trim();
+      const rating = parseInt(document.getElementById('revRating').value, 10);
+      const product = document.getElementById('revProductSelect').value;
+      const comment = document.getElementById('revComment').value.trim();
+
+      if (!author || !comment) return;
+
+      REVIEWS_DATA.unshift({
+        id: 'r' + (REVIEWS_DATA.length + 1),
+        author: author,
+        skinType: 'ผู้ใช้ที่ได้รับการยืนยัน',
+        product: product,
+        stars: rating,
+        date: 'เมื่อสักครู่',
+        comment: comment
+      });
+
+      renderReviews();
+      closeModal('addReviewModal');
+      showToast('ขอบพระคุณสำหรับการแบ่งปันรีวิวค่ะ ✨');
+      document.getElementById('revAuthor').value = '';
+      document.getElementById('revComment').value = '';
+    }
+
+    function handleNewsletter(e) {
+      e.preventDefault();
+      const email = document.getElementById('newsletterEmail').value.trim();
+      if (email) {
+        showToast(`ขอบคุณค่ะ! รหัสส่วนลดพิเศษถูกส่งไปยัง ${email} แล้ว`);
+        document.getElementById('newsletterEmail').value = '';
+      }
+    }
+
+    /* =========================================================
+       11. UI HELPERS & MODAL UTILITIES
+       ========================================================= */
+    function openModal(id) {
+      const m = document.getElementById(id);
+      if (m) m.classList.remove('hidden');
+    }
+
+    function closeModal(id) {
+      const m = document.getElementById(id);
+      if (m) m.classList.add('hidden');
+    }
+
+    function toggleMobileMenu() {
+      const menu = document.getElementById('mobileMenu');
+      if (menu) menu.classList.toggle('hidden');
+    }
+
+    function showToast(msg) {
+      const toast = document.getElementById('toast');
+      const toastMsg = document.getElementById('toastMessage');
+      if (!toast || !toastMsg) return;
+
+      toastMsg.innerText = msg;
+      toast.classList.remove('translate-y-24', 'opacity-0');
+      toast.classList.add('translate-y-0', 'opacity-100');
+
+      if (window.toastTimeout) clearTimeout(window.toastTimeout);
+      window.toastTimeout = setTimeout(() => {
+        toast.classList.remove('translate-y-0', 'opacity-100');
+        toast.classList.add('translate-y-24', 'opacity-0');
+      }, 3200);
+    }
+  </script>
+</body>
+</html>
